@@ -13,7 +13,7 @@ public class Room {
     private int roomId;
     private int roomType;
     private String roomCode;
-    private double roomPrice;
+    private double roomPricePerHour;
     private String roomDescription;
     private int roomStatus;
 }
