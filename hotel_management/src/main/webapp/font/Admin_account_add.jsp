@@ -7,15 +7,15 @@
     <title>Create Service</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/static/images/favicon.ico" />
-    <link rel="stylesheet" href="/static/css/backend-plugin.min.css">
-    <link rel="stylesheet" href="/static/css/backend.css">
-    <link rel="stylesheet" href="/static/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
-    <link rel="stylesheet" href="/static/vendor/remixicon/fonts/remixicon.css">
+    <link rel="shortcut icon" href="../static/images/favicon.ico" />
+    <link rel="stylesheet" href="../static/css/backend-plugin.min.css">
+    <link rel="stylesheet" href="../static/css/backend.css">
+    <link rel="stylesheet" href="../static/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="../static/vendor/remixicon/fonts/remixicon.css">
 
-    <link rel="stylesheet" href="/static/vendor/tui-calendar/tui-calendar/dist/tui-calendar.css">
-    <link rel="stylesheet" href="/static/vendor/tui-calendar/tui-date-picker/dist/tui-date-picker.css">
-    <link rel="stylesheet" href="/static/vendor/tui-calendar/tui-time-picker/dist/tui-time-picker.css">
+    <link rel="stylesheet" href="../static/vendor/tui-calendar/tui-calendar/dist/tui-calendar.css">
+    <link rel="stylesheet" href="../static/vendor/tui-calendar/tui-date-picker/dist/tui-date-picker.css">
+    <link rel="stylesheet" href="../static/vendor/tui-calendar/tui-time-picker/dist/tui-time-picker.css">
 </head>
 
 <body class=" color-light ">
@@ -31,7 +31,7 @@
         <div class="iq-sidebar  sidebar-default ">
             <div class="iq-sidebar-logo d-flex align-items-center">
                 <a href="#" class="header-logo">
-                    <img src="/static/images/logo.svg" alt="logo">
+                    <img src="../static/images/logo.svg" alt="logo">
                     <h3 class="logo-title light-logo">Hotel</h3>
                 </a>
                 <div class="iq-menu-bt-sidebar ml-0">
@@ -295,7 +295,7 @@
             </div>
         </footer>
         <!-- Backend Bundle JavaScript -->
-        <script src="/static/js/backend-bundle.min.js"></script>
+        <script src="../static/js/backend-bundle.min.js"></script>
 
         <!-- Table Treeview JavaScript -->
         <!-- <script src="../assets/js/table-treeview.js"></script> -->
@@ -309,7 +309,7 @@
         <!-- <script async src="../assets/js/slider.js"></script> -->
 
         <!-- app JavaScript -->
-        <script src="/static/js/app.js"></script>
+        <script src="../static/js/app.js"></script>
 
         <!-- <script src="../assets/vendor/moment.min.js"></script> -->
 </body>
