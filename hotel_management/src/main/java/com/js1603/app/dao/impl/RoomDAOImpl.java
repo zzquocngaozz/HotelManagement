@@ -19,10 +19,10 @@ public class RoomDAOImpl extends DBContext implements RoomDAO {
             while (rs.next()) {
                 Room room = Room.builder()
                         .roomId(rs.getInt(1))
-                        .roomCode(rs.getString(3))
-                        .roomPricePerHour(rs.getDouble(4))
-                        .roomDescription(rs.getString(5))
-                        .roomStatus(rs.getInt(6))
+                        .roomCode(rs.getString(2))
+                        .roomPricePerHour(rs.getDouble(3))
+                        .roomDescription(rs.getString(4))
+                        .roomStatus(rs.getInt(5))
                         .build();
                 roomList.add(room);
             }
@@ -54,15 +54,13 @@ public class RoomDAOImpl extends DBContext implements RoomDAO {
         String sql = "UPDATE `room` SET \n" +
                 "`room_code` = ?,\n" +
                 "`room_price_per_hour` = ?,\n" +
-                "`room_description` = ?,\n" +
-                "`room_status` = ? WHERE (`room_id` = ?);";
+                "`room_description` = ? WHERE (`room_id` = ?);";
         try {
             ps = connection.prepareStatement(sql);
             ps.setString(1, room.getRoomCode());
             ps.setDouble(2, room.getRoomPricePerHour());
             ps.setString(3, room.getRoomDescription());
-            ps.setInt(4, room.getRoomStatus());
-            ps.setInt(5, room.getRoomId());
+            ps.setInt(4, room.getRoomId());
             return ps.executeUpdate() == 1 ? true : false;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -71,11 +69,12 @@ public class RoomDAOImpl extends DBContext implements RoomDAO {
     }
 
     @Override
-    public boolean deleteRoom(int roomId) {
-        String sql = "UPDATE `room` SET `room_status` = 0 WHERE (`room_id` = ?);";
+    public boolean changeStatusRoom(int roomId, int status) {
+        String sql = "UPDATE `room` SET `room_status` = ? WHERE `room_id` = ?;";
         try {
             ps = connection.prepareStatement(sql);
-            ps.setInt(1, roomId);
+            ps.setInt(1, status == 1 ? 0 : 1);
+            ps.setInt(2, roomId);
             return ps.executeUpdate() == 1 ? true : false;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -88,14 +87,15 @@ public class RoomDAOImpl extends DBContext implements RoomDAO {
         String sql = "SELECT * FROM room WHERE room_id = ?";
         try {
             ps = connection.prepareStatement(sql);
+            ps.setInt(1, roomId);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Room room = Room.builder()
                         .roomId(rs.getInt(1))
-                        .roomCode(rs.getString(3))
-                        .roomPricePerHour(rs.getDouble(4))
-                        .roomDescription(rs.getString(5))
-                        .roomStatus(rs.getInt(6))
+                        .roomCode(rs.getString(2))
+                        .roomPricePerHour(rs.getDouble(3))
+                        .roomDescription(rs.getString(4))
+                        .roomStatus(rs.getInt(5))
                         .build();
                 return room;
             }
@@ -107,7 +107,7 @@ public class RoomDAOImpl extends DBContext implements RoomDAO {
 
     public static void main(String[] args) {
         RoomDAO dao = new RoomDAOImpl();
-//        System.out.println(dao.getAllRooms());
+        System.out.println(dao.getAllRooms());
 //        Room room = Room.builder()
 //                .roomId(7)
 //                .roomCode("HM103")
@@ -116,6 +116,6 @@ public class RoomDAOImpl extends DBContext implements RoomDAO {
 //                .roomStatus(1)
 //                .build();
 //        dao.updateRoom(room);
-        dao.deleteRoom(7);
+//        dao.deleteRoom(7);
     }
 }
