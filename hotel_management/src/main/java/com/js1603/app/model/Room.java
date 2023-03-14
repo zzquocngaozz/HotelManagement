@@ -11,7 +11,6 @@ import lombok.ToString;
 @ToString
 public class Room {
     private int roomId;
-    private int roomType;
     private String roomCode;
     private double roomPricePerHour;
     private String roomDescription;

@@ -9,58 +9,26 @@
     <meta name="keywords" content="" />
     <meta name="author" content="" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700">
-    <link rel="shortcut icon" href="/static/images/favicon.ico" />
-    <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/css/animate.css">
-    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="/static/css/aos.css">
-    <link rel="stylesheet" href="/static/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="/static/css/jquery.timepicker.css">
-    <link rel="stylesheet" href="/static/css/fancybox.min.css">
+    <link rel="shortcut icon" href="static/images/favicon.ico" />
+    <link rel="stylesheet" href="static/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/animate.css">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/aos.css">
+    <link rel="stylesheet" href="static/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="static/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="static/css/fancybox.min.css">
     
-    <link rel="stylesheet" href="/static/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="static/fonts/font-awesome.min.css">
 
     <!-- Theme Style -->
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
   </head>
   <body>
     
-    <header class="site-header js-site-header">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col-6 col-lg-4 site-logo" data-aos="fade"><a href="Home_page.jsp">Wogo Hotel</a></div>
-          <div class="col-6 col-lg-8">
-
-
-            <div class="site-menu-toggle js-site-menu-toggle"  data-aos="fade">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-            <!-- END menu-toggle -->
-
-            <div class="site-navbar js-site-navbar">
-              <nav role="navigation">
-                <div class="container">
-                  <div class="row full-height align-items-center">
-                    <div class="col-md-6 mx-auto">
-                      <ul class="list-unstyled menu">
-                        <li class="active"><a href="Home_page.jsp">Home</a></li>
-                        <li><a href="Home_page_room.jsp">Rooms</a></li>
-                        <li><a href="Home_dash_board.jsp">Dash board</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+    <jsp:include page="/common/header_home_page.jsp"></jsp:include>
     <!-- END head -->
 
-    <section class="site-hero overlay" style="background-image: url(/static/images/login/2126.jpg)" data-stellar-background-ratio="0.5">
+    <section class="site-hero overlay" style="background-image: url('static/images/login/2126.jpg')" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row site-hero-inner justify-content-center align-items-center">
           <div class="col-md-10 text-center" data-aos="fade-up">
@@ -133,9 +101,9 @@
         <div class="row align-items-center">
           <div class="col-md-12 col-lg-7 ml-auto order-lg-2 position-relative mb-5" data-aos="fade-up">
             <figure class="img-absolute">
-              <img src="/static/images/1.jpg" alt="Image" class="img-fluid">
+              <img src="static/images/1.jpg" alt="Image" class="img-fluid">
             </figure>
-            <img src="/static/images/img_1.jpg" alt="Image" class="img-fluid rounded">
+            <img src="static/images/img_1.jpg" alt="Image" class="img-fluid rounded">
           </div>
           <div class="col-md-12 col-lg-4 order-lg-1" data-aos="fade-up">
             <h2 class="heading">Welcome!</h2>
@@ -157,7 +125,7 @@
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
             <a  class="room">
               <figure class="img-wrap">
-                <img src="/static/images/img_3.jpg" alt="Free website template" class="img-fluid mb-3" >
+                <img src="static/images/img_3.jpg" alt="Free website template" class="img-fluid mb-3" >
               </figure>
               <div class="p-3 text-center room-info">
                 <h2>Single Room</h2>
@@ -169,7 +137,7 @@
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
             <a  class="room">
               <figure class="img-wrap">
-                <img src="/static/images/img_2.jpg" alt="Free website template" class="img-fluid mb-3">
+                <img src="static/images/img_2.jpg" alt="Free website template" class="img-fluid mb-3">
               </figure>
               <div class="p-3 text-center room-info">
                 <h2>Family Room</h2>
@@ -181,7 +149,7 @@
           <div class="col-md-6 col-lg-4" data-aos="fade-up">
             <a  class="room">
               <figure class="img-wrap">
-                <img src="/static/images/img_4.jpg" alt="Free website template" class="img-fluid mb-3">
+                <img src="static/images/img_4.jpg" alt="Free website template" class="img-fluid mb-3">
               </figure>
               <div class="p-3 text-center room-info">
                 <h2>Presidential Room</h2>
@@ -203,7 +171,7 @@
     
 
 
-    <section class="section bg-image overlay" style="background-image: url('images/hero_4.jpg');">
+    <section class="section bg-image overlay" style="background-image: url('static/images/login/2126.jpg');">
         <div class="container" >
           <div class="row align-items-center">
             <div class="col-12 col-md-6 text-center mb-4 mb-md-0 text-md-left" data-aos="fade-up">
@@ -266,22 +234,22 @@
       </div>
     </footer>
     
-    <script src="/static/js/jquery-3.3.1.min.js"></script>
-    <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/owl.carousel.min.js"></script>
-    <script src="/static/js/jquery.stellar.min.js"></script>
-    <script src="/static/js/jquery.fancybox.min.js"></script>
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/owl.carousel.min.js"></script>
+    <script src="static/js/jquery.stellar.min.js"></script>
+    <script src="static/js/jquery.fancybox.min.js"></script>
     
     
-    <script src="/static/js/aos.js"></script>
+    <script src="static/js/aos.js"></script>
     
-    <script src="/static/js/bootstrap-datepicker.js"></script> 
-    <script src="/static/js/jquery.timepicker.min.js"></script> 
+    <script src="static/js/bootstrap-datepicker.js"></script>
+    <script src="static/js/jquery.timepicker.min.js"></script>
 
     
 
-    <script src="/static/js/main.js"></script>
+    <script src="static/js/main.js"></script>
   </body>
 </html>

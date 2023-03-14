@@ -20,6 +20,7 @@ public class DBContext {
             String username = properties.getProperty("userName");
             String password = properties.getProperty("password");
 
+            Class.forName(driver);
             connection = DriverManager.getConnection(url, username, password);
             if (connection != null) {
                 System.out.println("Success");
