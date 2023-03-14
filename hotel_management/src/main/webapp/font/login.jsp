@@ -37,7 +37,7 @@
                                     <div class="p-3">
                                         <h2 class="mb-2 text-white">Sign In</h2>
                                         <p>Login to stay connected.</p>
-                                        <form th:action="@{/doLogin}" method="post">
+                                        <form >
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="floating-label form-group">
@@ -61,21 +61,17 @@
                                                                for="customCheck1">Remember Me</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-6">
-                                                    <a href="auth-recoverpw.html" class="text-white float-right">Forgot
-                                                        Password?</a>
-                                                </div>
                                             </div>
                                             <button type="submit" class="btn btn-white">Sign In</button>
                                             <p class="mt-3">
-                                                Create an Account <a th:href="@{/process_register}"
+                                                Create an Account <a href="#"
                                                                      class="text-white text-underline">Sign Up</a>
                                             </p>
                                         </form>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 content-right">
-                                    <img src="/static/images/login/2348793.jpg" class="img-fluid image-right" alt="">
+                                    <img src="static/images/login/2348793.jpg" class="img-fluid image-right" alt="">
                                 </div>
                             </div>
                         </div>
@@ -87,23 +83,23 @@
 </div>
 
 <!-- Backend Bundle JavaScript -->
-<script src="/static/js/backend-bundle.min.js"></script>
+<script src="static/js/backend-bundle.min.js"></script>
 
 <!-- Table Treeview JavaScript -->
-<script src="/static/js/table-treeview.js"></script>
+<script src="static/js/table-treeview.js"></script>
 
 <!-- Chart Custom JavaScript -->
-<script src="/static/js/customizer.js"></script>
+<script src="static/js/customizer.js"></script>
 
 <!-- Chart Custom JavaScript -->
-<script async src="/static/js/chart-custom.js"></script>
+<script async src="static/js/chart-custom.js"></script>
 <!-- Chart Custom JavaScript -->
-<script async src="/static/js/slider.js"></script>
+<script async src="static/js/slider.js"></script>
 
 <!-- app JavaScript -->
-<script src="/static/js/app.js"></script>
+<script src="static/js/app.js"></script>
 
-<script src="/static/vendor/moment.min.js"></script>
+<script src="static/vendor/moment.min.js"></script>
 <!-- JavaScript Bundle with Popper -->
 <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>-->
 </body>

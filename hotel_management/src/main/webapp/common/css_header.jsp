@@ -5,12 +5,15 @@
   Time: 9:17 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
-</html>
+<title>Wogo hotel</title>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="static/images/favicon.ico">
+<link rel="stylesheet" href="static/css/backend-plugin.min.css">
+<link rel="stylesheet" href="static/css/backend.css">
+<link rel="stylesheet" href="static/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+<link rel="stylesheet" href="static/vendor/remixicon/fonts/remixicon.css">
+
+<link rel="stylesheet" href="static/vendor/tui-calendar/tui-calendar/dist/tui-calendar.css">
+<link rel="stylesheet" href="static/vendor/tui-calendar/tui-date-picker/dist/tui-date-picker.css">
+<link rel="stylesheet" href="static/vendor/tui-calendar/tui-time-picker/dist/tui-time-picker.css">
