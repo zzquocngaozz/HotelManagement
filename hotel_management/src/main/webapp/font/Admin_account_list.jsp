@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -35,23 +36,27 @@
                                     <thead>
                                     <tr>
                                         <th style="text-align: center">No</th>
-                                        <th style="text-align: center">ID</th>
-                                        <th style="text-align: center">User</th>
-                                        <th style="text-align: center">Password</th>
-                                        <th style="text-align: center">Role</th> 
-                                        <th style="text-align: center">Status</th>  
-                                        <th style="text-align: center">Action</th>                                     
+                                        <th style="text-align: center">Username</th>
+                                        <th style="text-align: center">Email</th>
+                                        <th style="text-align: center">Role</th>
+                                        <th style="text-align: center">DOB</th>
+                                        <th style="text-align: center">Phone</th>
+                                        <th style="text-align: center">Gender</th>
+                                        <th style="text-align: center">Status</th>
+                                        <th style="text-align: center">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <c:forEach items="${listUser}" var="lu">
                                     <tr >
-                                        <td style="text-align: center" >1</td>
-                                        <td style="text-align: left" ></td>
-                                        <td style="text-align: left" ></td>
-                                        <td style="text-align: left" ></td>
-                                        <td style="text-align: left" ></td>
-                                        <td style="text-align: left" ></td>
-                                        </td>
+                                        <td style="text-align: center" >${lu.userId}</td>
+                                        <td style="text-align: center" >${lu.userName}</td>
+                                        <td style="text-align: center" >${lu.userEmail}</td>
+                                        <td style="text-align: center" >${lu.userRole == 1?"Admin":(lu.userRole==2?"Staff":"Customer")}</td>
+                                        <td style="text-align: center" >${lu.userDob}</td>
+                                        <td style="text-align: center" >${lu.userPhone}</td>
+                                        <td style="text-align: center" >${lu.userGender ==1?"Male":"Female"}</td>
+                                        <td style="text-align: center" >${lu.userStatus ==1?"Active":"Block"}</td>
                                         <td>
                                             <div class="d-flex  list-action" style="margin-left: 41%;">
                                                 <a class="badge bg-primary-light mr-2" data-toggle="tooltip" 
@@ -64,6 +69,7 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
