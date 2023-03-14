@@ -8,15 +8,15 @@
     <!-- CSS only -->
     <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">-->
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/static/images/favicon.ico" />
-    <link rel="stylesheet" href="/static/css/backend-plugin.min.css">
-    <link rel="stylesheet" href="/static/css/backend.css">
-    <link rel="stylesheet" href="/static/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
-    <link rel="stylesheet" href="/static/vendor/remixicon/fonts/remixicon.css">
+    <link rel="shortcut icon" href="../static/images/favicon.ico" />
+    <link rel="stylesheet" href="../static/css/backend-plugin.min.css">
+    <link rel="stylesheet" href="../static/css/backend.css">
+    <link rel="stylesheet" href="../static/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="../static/vendor/remixicon/fonts/remixicon.css">
 
-    <link rel="stylesheet" href="/static/vendor/tui-calendar/tui-calendar/dist/tui-calendar.css">
-    <link rel="stylesheet" href="/static/vendor/tui-calendar/tui-date-picker/dist/tui-date-picker.css">
-    <link rel="stylesheet" href="/static/vendor/tui-calendar/tui-time-picker/dist/tui-time-picker.css">
+    <link rel="stylesheet" href="../static/vendor/tui-calendar/tui-calendar/dist/tui-calendar.css">
+    <link rel="stylesheet" href="../static/vendor/tui-calendar/tui-date-picker/dist/tui-date-picker.css">
+    <link rel="stylesheet" href="../static/vendor/tui-calendar/tui-time-picker/dist/tui-time-picker.css">
 </head>
 
 <body class=" color-light ">
@@ -32,7 +32,7 @@
         <div class="iq-sidebar  sidebar-default ">
             <div class="iq-sidebar-logo d-flex align-items-center">
                 <a href="#" class="header-logo">
-                    <img src="/static/images/logo.svg" alt="logo">
+                    <img src="../static/images/logo.svg" alt="logo">
                     <h3 class="logo-title light-logo">Hotel</h3>
                 </a>
                 <div class="iq-menu-bt-sidebar ml-0">
