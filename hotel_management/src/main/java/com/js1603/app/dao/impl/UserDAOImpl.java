@@ -56,9 +56,8 @@ public class UserDAOImpl extends DBContext implements UserDAO {
             ps.setString(5, user.getUserDob());
             ps.setString(6, user.getUserPhone());
             ps.setInt(7, user.getUserGender());
-            ps.setInt(8,1);
+            ps.setInt(8, 1);
             return ps.executeUpdate() == 1;
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -86,7 +85,7 @@ public class UserDAOImpl extends DBContext implements UserDAO {
             ps.setString(5, user.getUserDob());
             ps.setString(6, user.getUserPhone());
             ps.setInt(7, user.getUserGender());
-            ps.setInt(8,1);
+            ps.setInt(8, 1);
             ps.setInt(9, user.getUserId());
             return ps.executeUpdate() == 1;
         } catch (SQLException e) {
@@ -117,9 +116,5 @@ public class UserDAOImpl extends DBContext implements UserDAO {
         List<User> userList = new ArrayList<>();
         UserDAOImpl impl = new UserDAOImpl();
         userList = impl.getAllUser();
-
-        System.out.println(userList);
-        impl.deleteUser(7);
-
     }
 }
