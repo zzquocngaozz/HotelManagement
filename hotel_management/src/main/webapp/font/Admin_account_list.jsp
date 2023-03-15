@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -27,7 +28,7 @@
                             <div class="iq-header-title">
                                 <h4 class="card-title mb-0">User List</h4>
                             </div>
-                            <a href="Admin_account_add.jsp" class="btn btn-primary">Add User</a>
+                            <a href="add-user" class="btn btn-primary">Add User</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -35,35 +36,40 @@
                                     <thead>
                                     <tr>
                                         <th style="text-align: center">No</th>
-                                        <th style="text-align: center">ID</th>
-                                        <th style="text-align: center">User</th>
-                                        <th style="text-align: center">Password</th>
-                                        <th style="text-align: center">Role</th> 
-                                        <th style="text-align: center">Status</th>  
-                                        <th style="text-align: center">Action</th>                                     
+                                        <th style="text-align: center">Username</th>
+                                        <th style="text-align: center">Email</th>
+                                        <th style="text-align: center">Role</th>
+                                        <th style="text-align: center">DOB</th>
+                                        <th style="text-align: center">Phone</th>
+                                        <th style="text-align: center">Gender</th>
+                                        <th style="text-align: center">Status</th>
+                                        <th style="text-align: center">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <c:forEach items="${listUser}" var="lu">
                                     <tr >
-                                        <td style="text-align: center" >1</td>
-                                        <td style="text-align: left" ></td>
-                                        <td style="text-align: left" ></td>
-                                        <td style="text-align: left" ></td>
-                                        <td style="text-align: left" ></td>
-                                        <td style="text-align: left" ></td>
-                                        </td>
+                                        <td style="text-align: center" >${lu.userId}</td>
+                                        <td style="text-align: center" >${lu.userName}</td>
+                                        <td style="text-align: center" >${lu.userEmail}</td>
+                                        <td style="text-align: center" >${lu.userRole == 1?"Admin":(lu.userRole==2?"Staff":"Customer")}</td>
+                                        <td style="text-align: center" >${lu.userDob}</td>
+                                        <td style="text-align: center" >${lu.userPhone}</td>
+                                        <td style="text-align: center" >${lu.userGender ==1?"Male":"Female"}</td>
+                                        <td style="text-align: center" >${lu.userStatus ==1?"Active":"Block"}</td>
                                         <td>
-                                            <div class="d-flex  list-action" style="margin-left: 41%;">
+                                            <div class="d-flex  list-action" style="margin-left: 15%;">
                                                 <a class="badge bg-primary-light mr-2" data-toggle="tooltip" 
                                                    data-placement="top" title="" data-original-title="Edit"
-                                                   href="Admin_account_edit.jsp"><i class="lar la-edit" ></i></a>
-                                                <a class="badge bg-danger-light mr-2" data-toggle="tooltip" 
-                                                   data-placement="top" title="" data-original-title="Delete"
-                                                   href="#"
-                                                   onclick="return confirm('Do you want to delete this user?');" ><i class="lar la-trash-alt "></i></a>
+                                                   href="update-user?id=${lu.userId}"><i class="lar la-edit" ></i></a>
+                                                <a class="badge ${lu.userStatus == 1?"bg-danger":"bg-success"}" data-toggle="tooltip"
+                                                   data-placement="top" title="" data-original-title="${lu.userStatus == 1?"Block":"Active"}"
+                                                   href="delete-user?id=${lu.userId}&status=${lu.userStatus}"
+                                                   onclick="return confirm('Do you want to change status this user?');" ><i class="las la-undo-alt"></i></a>
                                             </div>
                                         </td>
                                     </tr>
+                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
