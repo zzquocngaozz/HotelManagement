@@ -1,6 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
-<html >
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +28,7 @@
                             <div class="iq-header-title">
                                 <h4 class="card-title mb-0">Room List</h4>
                             </div>
-                            <a href="#" class="btn btn-primary">Add Room</a>
+                            <a href="room-add" class="btn btn-primary">Add Room</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -36,31 +37,33 @@
                                     <tr>
                                         <th style="text-align: center">ID</th>
                                         <th style="text-align: center">Code Room</th>
-                                        <th style="text-align: center">Type Room</th>
-                                        <th style="text-align: center">Booker</th>
+                                        <th style="text-align: center">Cost Per Hour</th>
                                         <th style="text-align: center">Status</th>
                                         <th style="text-align: center">Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr >
-                                        <td style="text-align: center" >1</td>
-                                        <td style="text-align: center" ></td>
-                                        <td style="text-align: left" ></td>
-                                        <td style="text-align: center" ></td>
-                                        <td style="text-align: center" ></td>
-                                        <td>
-                                            <div class="d-flex  list-action" style="margin-left: 41%;">
-                                                <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
-                                                   data-placement="top" title="" data-original-title="Edit"
-                                                   href="Admin_room_edit.jsp"><i class="lar la-edit" ></i></a>
-                                                <a class="badge bg-danger-light mr-2" data-toggle="tooltip"
-                                                   data-placement="top" title="" data-original-title="Delete"
-                                                   href="#"
-                                                   onclick="return confirm('Do you want to delete this room?');" ><i class="lar la-trash-alt "></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <c:forEach items="${list}" var="r">
+                                        <tr>
+                                            <td style="text-align: center">${r.roomId}</td>
+                                            <td style="text-align: center">${r.roomCode}</td>
+                                            <td style="text-align: center">${r.roomPricePerHour}</td>
+                                            <td style="text-align: center">${r.roomStatus == 1?"Active":"Inactive"}</td>
+                                            <td>
+                                                <div class="d-flex  list-action" style="margin-left: 41%;">
+                                                    <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
+                                                       data-placement="top" title="" data-original-title="Edit"
+                                                       href="room-update?id=${r.roomId}"><i class="lar la-edit"></i></a>
+                                                    <a class="badge ${r.roomStatus == 1?"bg-danger":"bg-success"} mr-2" data-toggle="tooltip"
+                                                       data-placement="top" title="" data-original-title="${r.roomStatus == 1?"Inactive":"Active"}"
+                                                       href="room-delete?id=${r.roomId}&status=${r.roomStatus}"
+                                                       onclick="return confirm('Do you want to change status this room?');">
+                                                        <i class="las la-undo-alt"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

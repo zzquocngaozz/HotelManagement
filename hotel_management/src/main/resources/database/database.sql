@@ -59,14 +59,14 @@ DROP TABLE IF EXISTS `room`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `room` (
   `room_id` int NOT NULL AUTO_INCREMENT,
-  `room_type` int NOT NULL DEFAULT '1',
   `room_code` varchar(10) NOT NULL,
   `room_price_per_hour` double NOT NULL,
   `room_description` text,
   `room_status` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`room_id`),
-  UNIQUE KEY `room_id_UNIQUE` (`room_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+  UNIQUE KEY `room_id_UNIQUE` (`room_id`),
+  UNIQUE KEY `room_code_UNIQUE` (`room_code`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,7 +75,7 @@ CREATE TABLE `room` (
 
 LOCK TABLES `room` WRITE;
 /*!40000 ALTER TABLE `room` DISABLE KEYS */;
-INSERT INTO `room` VALUES (1,1,'HM101',20000,'no description ','1'),(2,2,'HM201',30000,'no description ','1'),(3,3,'HM301',40000,'no description ','1'),(4,1,'HM401',25000,'no description ','1'),(5,2,'HM102',30000,'no description ','1'),(6,1,'HM202',20000,'no description ','1');
+INSERT INTO `room` VALUES (1,'HM101',20000,'no description','1'),(2,'HM201',30000,'no description ','1'),(3,'HM301',40000,'no description ','1'),(4,'HM401',25000,'no description ','1'),(5,'HM102',30000,'no description ','1'),(6,'HM202',20000,'no description ','1'),(7,'HM103',160000,'No description','1'),(8,'HM105',20000,'no problem','1');
 /*!40000 ALTER TABLE `room` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,14 +87,14 @@ DROP TABLE IF EXISTS `service`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `service` (
-  `sevice_id` int NOT NULL AUTO_INCREMENT,
+  `service_id` int NOT NULL AUTO_INCREMENT,
   `service_name` varchar(50) NOT NULL,
-  `sevice_price` int NOT NULL,
+  `service_price` int NOT NULL,
   `service_description` text,
   `service_status` char(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`sevice_id`),
-  UNIQUE KEY `sevice_id_UNIQUE` (`sevice_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
+  PRIMARY KEY (`service_id`),
+  UNIQUE KEY `sevice_id_UNIQUE` (`service_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,7 +103,7 @@ CREATE TABLE `service` (
 
 LOCK TABLES `service` WRITE;
 /*!40000 ALTER TABLE `service` DISABLE KEYS */;
-INSERT INTO `service` VALUES (1,'Massa',200000,'No description','1'),(2,'Karaoke',100000,'No description','1'),(3,'Hire Bike Recycle',50000,'No description','1'),(4,'Breakfast',30000,'No description','1'),(5,'Gofl',1000000,'No description','1'),(6,'Car',100000,'No description','1'),(7,'Tour',2000000,'No description','1');
+INSERT INTO `service` VALUES (1,'Massa',200000,'No description','1'),(2,'Karaoke',100000,'No description','1'),(3,'Hire Bike Recycle',50000,'No description','1'),(4,'Breakfast',30000,'No description','1'),(5,'Gofl',1000000,'No description','1'),(6,'Car',100000,'No description','1'),(7,'Tour',2000000,'No description','1'),(8,'Bánh mì heroin',150000,'No description','0'),(9,'Gà Kho ',200000,'No','1');
 /*!40000 ALTER TABLE `service` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +121,7 @@ CREATE TABLE `service_item` (
   KEY `fk_service_item_bill1_idx` (`bill_id`),
   KEY `fk_service_item_service1_idx` (`sevice_id`),
   CONSTRAINT `fk_service_item_bill1` FOREIGN KEY (`bill_id`) REFERENCES `bill` (`bill_id`),
-  CONSTRAINT `fk_service_item_service1` FOREIGN KEY (`sevice_id`) REFERENCES `service` (`sevice_id`)
+  CONSTRAINT `fk_service_item_service1` FOREIGN KEY (`sevice_id`) REFERENCES `service` (`service_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -177,4 +177,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-09 11:51:31
+-- Dump completed on 2023-03-14 21:46:13
