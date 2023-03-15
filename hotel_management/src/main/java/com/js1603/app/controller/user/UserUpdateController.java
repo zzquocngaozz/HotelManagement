@@ -11,16 +11,21 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "UserAddController", value = "/add-user")
-public class UserAddController extends HttpServlet {
+@WebServlet(name = "UserUpdateController", value = "/update-user")
+public class UserUpdateController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("./font/Admin_account_add.jsp").forward(request, response);
+        int id = Integer.parseInt(request.getParameter("id"));
+        UserDAO dao = new UserDAOImpl();
+        User user = dao.getUserById(id);
+        request.setAttribute("user", user);
+        request.getRequestDispatcher("./font/Admin_account_edit.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDAO dao = new UserDAOImpl();
+        int userId = Integer.parseInt(request.getParameter("id"));
         String userName = request.getParameter("userName");
         String userEmail = request.getParameter("userEmail");
         String userPassword = request.getParameter("userPassword");
@@ -30,6 +35,7 @@ public class UserAddController extends HttpServlet {
         int userGender = Integer.parseInt(request.getParameter("userGender"));
         int userStatus = Integer.parseInt(request.getParameter("userStatus"));
         User user = User.builder()
+                .userId(userId)
                 .userName(userName)
                 .userEmail(userEmail)
                 .userPassword(userPassword)
@@ -39,7 +45,7 @@ public class UserAddController extends HttpServlet {
                 .userGender(userGender)
                 .userStatus(userStatus)
                 .build();
-        dao.addUser(user);
+        dao.updateUser(user);
         response.sendRedirect("user-list");
     }
 }

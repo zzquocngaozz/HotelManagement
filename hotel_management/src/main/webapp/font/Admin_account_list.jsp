@@ -28,7 +28,7 @@
                             <div class="iq-header-title">
                                 <h4 class="card-title mb-0">User List</h4>
                             </div>
-                            <a href="Admin_account_add.jsp" class="btn btn-primary">Add User</a>
+                            <a href="add-user" class="btn btn-primary">Add User</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -58,14 +58,14 @@
                                         <td style="text-align: center" >${lu.userGender ==1?"Male":"Female"}</td>
                                         <td style="text-align: center" >${lu.userStatus ==1?"Active":"Block"}</td>
                                         <td>
-                                            <div class="d-flex  list-action" style="margin-left: 41%;">
+                                            <div class="d-flex  list-action" style="margin-left: 15%;">
                                                 <a class="badge bg-primary-light mr-2" data-toggle="tooltip" 
                                                    data-placement="top" title="" data-original-title="Edit"
-                                                   href="Admin_account_edit.jsp"><i class="lar la-edit" ></i></a>
-                                                <a class="badge bg-danger-light mr-2" data-toggle="tooltip" 
-                                                   data-placement="top" title="" data-original-title="Delete"
-                                                   href="#"
-                                                   onclick="return confirm('Do you want to delete this user?');" ><i class="lar la-trash-alt "></i></a>
+                                                   href="update-user?id=${lu.userId}"><i class="lar la-edit" ></i></a>
+                                                <a class="badge ${lu.userStatus == 1?"bg-danger":"bg-success"}" data-toggle="tooltip"
+                                                   data-placement="top" title="" data-original-title="${lu.userStatus == 1?"Block":"Active"}"
+                                                   href="delete-user?id=${lu.userId}&status=${lu.userStatus}"
+                                                   onclick="return confirm('Do you want to change status this user?');" ><i class="las la-undo-alt"></i></a>
                                             </div>
                                         </td>
                                     </tr>

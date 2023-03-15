@@ -94,17 +94,15 @@ public class UserDAOImpl extends DBContext implements UserDAO {
     }
 
     @Override
-    public boolean deleteUser(int userId) {
+    public boolean deleteUser(int userId, int status) {
         String sql = "UPDATE `hotel_management`.`user`\n" +
-                "SET`user_status` = 0\n" +
+                "SET`user_status` = ?\n" +
                 "WHERE `user_id` = ?;";
         try {
             ps = connection.prepareStatement(sql);
-            ps.setInt(1, userId);
-            if (ps.executeUpdate() == 1) {
-                System.out.println("Delete Success");
+            ps.setInt(1, status == 0 ? 1 : 0);
+            ps.setInt(2, userId);
 
-            }
             return ps.executeUpdate() == 1;
 
         } catch (SQLException e) {
@@ -112,11 +110,40 @@ public class UserDAOImpl extends DBContext implements UserDAO {
         }
     }
 
+    @Override
+    public User getUserById(int userId) {
+        String sql = "SELECT * FROM hotel_management.user where user_id = ?";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1,userId);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                User user = User.builder()
+                        .userId(rs.getInt(1))
+                        .userName(rs.getString(2))
+                        .userEmail(rs.getString(3))
+                        .userPassword(rs.getString(4))
+                        .userRole(rs.getInt(5))
+                        .userDob(rs.getString(6))
+                        .userPhone(rs.getString(7))
+                        .userGender(rs.getInt(8))
+                        .userStatus(rs.getInt(9))
+                        .build();
+                return user;
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         List<User> userList = new ArrayList<>();
         UserDAOImpl impl = new UserDAOImpl();
         userList = impl.getAllUser();
 
-        System.out.println(userList);
+        User user = impl.getUserById(1);
+        System.out.println(user);
     }
 }

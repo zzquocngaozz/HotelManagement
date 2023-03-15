@@ -8,6 +8,8 @@ public interface UserDAO {
     public List<User> getAllUser();
     public boolean addUser(User user);
     public boolean updateUser(User user);
-    public boolean deleteUser(int userId);
+    public boolean deleteUser(int userId, int status);
+
+    public User getUserById(int userId);
 
 }
