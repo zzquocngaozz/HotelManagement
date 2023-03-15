@@ -13,9 +13,8 @@ public class RoomDeleteController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RoomDAO dao = new RoomDAOImpl();
-        int roomId = Integer.parseInt(request.getParameter("id"));
-        int status = Integer.parseInt(request.getParameter("status"));
-        dao.changeStatusRoom(roomId, status);
+        int roomId = Integer.parseInt(request.getParameter("roomId"));
+        dao.deleteRoom(roomId);
         response.sendRedirect("room-list");
     }
 

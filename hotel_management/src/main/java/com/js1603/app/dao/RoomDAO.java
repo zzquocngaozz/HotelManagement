@@ -8,7 +8,7 @@ public interface RoomDAO {
     public List<Room> getAllRooms();
     public boolean addRoom(Room room);
     public boolean updateRoom(Room room);
-    public boolean changeStatusRoom(int roomId, int status);
+    public boolean deleteRoom(int roomId);
 
     Room getRoomById(int roomId);
 }

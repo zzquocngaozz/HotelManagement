@@ -55,7 +55,7 @@
                                                        href="service-update?id=${s.serviceId}"><i class="lar la-edit"></i></a>
                                                     <a class="badge ${s.serviceStatus == 1?"bg-danger":"bg-success"} mr-2" data-toggle="tooltip"
                                                        data-placement="top" title="" data-original-title="${s.serviceStatus == 1?"Inactive":"Active"}"
-                                                       href="service-delete?id=${s.serviceId}&status=${s.serviceStatus}"
+                                                       href="service-delete?id=${s.serviceId}&status=${s.serviceStatus  }"
                                                        onclick="return confirm('Do you want to change status this service?');">
                                                         <i class="las la-undo-alt"></i>
                                                     </a>

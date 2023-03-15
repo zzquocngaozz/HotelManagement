@@ -18,7 +18,7 @@ public class RoomListController extends HttpServlet {
         List<Room> roomList = dao.getAllRooms();
 
         request.setAttribute("list", roomList);
-        request.getRequestDispatcher("./font/Admin_room_list.jsp").forward(request, response);
+        request.getRequestDispatcher("./font/Admin_booking_list.jsp").forward(request, response);
     }
 
     @Override
