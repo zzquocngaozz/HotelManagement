@@ -5,6 +5,7 @@
   Time: 11:31 PM
   To change this template use File | Settings | File Templates.
 --%>
+<<<<<<< HEAD
 <header class="site-header js-site-header">
   <div class="container-fluid">
     <div class="row align-items-center">
@@ -38,3 +39,14 @@
     </div>
   </div>
 </header>
+=======
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+  <head>
+    <title>$Title$</title>
+  </head>
+  <body>
+  $END$
+  </body>
+</html>
+>>>>>>> 8e2e0187be8377c13cd993ac5e87a7bc295d5aa7
