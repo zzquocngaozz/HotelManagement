@@ -70,6 +70,50 @@
                                     </a>
                                 </form>
                             </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form action="add-booking" method="POST">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label>Name :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Name" name="bookingName">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label>Phone :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Phone " name="bookingPhone">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Payment :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Payment" name="bookingPayment">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Room :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Room " name="bookingRoom">
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label>Check in :</label>
+                                        <input type="date"  class="form-control" name="bookingCki"
+                                               >
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Check out :</label>
+                                        <input type="date"  class="form-control"
+                                               name="bookingCkout">
+                                    </div>
+                                    
+                                </div>
+                                <button type="submit" class="btn btn-outline-success">Add</button>
+                                <a class="btn btn-outline-primary" href="Admin_booking_list.jsp">
+                                    Back
+                                </a>
+                            </form>
                         </div>
                     </div>
                 </div>

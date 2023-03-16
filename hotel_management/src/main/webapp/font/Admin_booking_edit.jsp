@@ -28,6 +28,7 @@
                                 <h4 class="card-title">Edit Booking Information</h4>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="card-body">
                             <div class="new-user-info">
                                 <form action="update-booking?id=${bill.billId}" method="POST" >
@@ -61,12 +62,52 @@
                                 </form>
                             </div>
                         </div>
+=======
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            <form action="update-booking?id=${bill.billId}" method="POST" >
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label>CustomerID :</label>
+                                        <input type="text"  class="form-control" name="bookingNameId" value="${bill.user.userId}"
+                                               placeholder="Enter NameId">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>RoomID :</label>
+                                        <input type="text"  class="form-control" name="bookingRoomId" value="${bill.room.roomId}"
+                                               placeholder="Enter RoomId">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Check in :</label>
+                                        <input type="date"  class="form-control" name="bookingCki" value="${bill.checkInDate}"
+                                               >
+                                    </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Check out :</label>
+                                            <input type="date"  class="form-control" value="${bill.checkOutDate}"
+                                                   name="bookingCkout">
+                                        </div>
+                                </div>
+                                <button type="submit" class="btn btn-outline-success">Edit</button>
+                                <a class="btn btn-outline-primary" href="Admin_booking_list.jsp">
+                                    Back
+                                </a>
+                            <!-- </form> -->
+                            </form>
+>>>>>>> a2f6c873e5286e3cd4eb817fa9416b74099b4cda
                     </div>
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <!-- Page end  -->
+=======
+</div>
+</div>
+<!-- Page end  -->
+>>>>>>> a2f6c873e5286e3cd4eb817fa9416b74099b4cda
 
     <!-- Wrapper End-->
 

@@ -3,6 +3,7 @@ package com.js1603.app.dao.impl;
 import com.js1603.app.dao.BillDAO;
 import com.js1603.app.model.Bill;
 import com.js1603.app.model.Room;
+import com.js1603.app.model.Service;
 import com.js1603.app.model.User;
 import com.js1603.app.util.DBContext;
 
