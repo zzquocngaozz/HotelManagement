@@ -28,40 +28,48 @@
                     </div>
                     <div class="card-body">
                         <div class="new-user-info">
-                            <form action="add-booking" method="POST">
+                            <form >
                                 <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label>ID :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter ID ">
+                                    </div>
                                     <div class="form-group col-md-6">
                                         <label>Name :</label>
                                         <input type="text"  class="form-control"
-                                               placeholder="Enter Name" name="bookingName">
+                                               placeholder="Enter Name">
                                     </div>
-
+                                    <div class="form-group col-md-6">
+                                        <label>Dob :</label>
+                                        <input type="date"  class="form-control"
+                                               >
+                                    </div>
                                     <div class="form-group col-md-6">
                                         <label>Phone :</label>
                                         <input type="text"  class="form-control"
-                                               placeholder="Enter Phone " name="bookingPhone">
+                                               placeholder="Enter Phone">
+                                    </div> 
+                                    <div class="form-group col-md-6">
+                                        <label>Cost :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Cost ">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Payment :</label>
                                         <input type="text"  class="form-control"
-                                               placeholder="Enter Payment" name="bookingPayment">
-                                    </div>
+                                               placeholder="Enter Payment">
+                                    </div> 
                                     <div class="form-group col-md-6">
                                         <label>Room :</label>
                                         <input type="text"  class="form-control"
-                                               placeholder="Enter Room " name="bookingRoom">
-                                    </div>
-
-                                    <div class="form-group col-md-6">
-                                        <label>Check in :</label>
-                                        <input type="date"  class="form-control" name="bookingCki"
-                                               >
+                                               placeholder="Enter Room ">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label>Check out :</label>
-                                        <input type="date"  class="form-control"
-                                               name="bookingCkout">
-                                    </div>
+                                        <label>Service :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Service">
+                                    </div>                                
                                     
                                 </div>
                                 <button type="submit" class="btn btn-outline-success">Add</button>

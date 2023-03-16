@@ -30,41 +30,61 @@
                     </div>
                     <div class="card-body">
                         <div class="new-user-info">
-                            <form action="update-booking?id=${bill.billId}" method="POST" >
+                            <form >
                                 <div class="row">
                                     <div class="form-group col-md-6">
-                                        <label>CustomerID :</label>
-                                        <input type="text"  class="form-control" name="bookingNameId" value="${bill.user.userId}"
-                                               placeholder="Enter NameId">
+                                        <label>ID :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter ID ">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label>RoomID :</label>
-                                        <input type="text"  class="form-control" name="bookingRoomId" value="${bill.room.roomId}"
-                                               placeholder="Enter RoomId">
+                                        <label>Name :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Name">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label>Check in :</label>
-                                        <input type="date"  class="form-control" name="bookingCki" value="${bill.checkInDate}"
+                                        <label>Dob :</label>
+                                        <input type="date"  class="form-control"
                                                >
                                     </div>
-                                        <div class="form-group col-md-6">
-                                            <label>Check out :</label>
-                                            <input type="date"  class="form-control" value="${bill.checkOutDate}"
-                                                   name="bookingCkout">
-                                        </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Phone :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Phone">
+                                    </div> 
+                                    <div class="form-group col-md-6">
+                                        <label>Cost :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Cost ">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Payment :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Payment">
+                                    </div> 
+                                    <div class="form-group col-md-6">
+                                        <label>Room :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Room ">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Service :</label>
+                                        <input type="text"  class="form-control"
+                                               placeholder="Enter Service">
+                                    </div>                                
+                                    
                                 </div>
                                 <button type="submit" class="btn btn-outline-success">Edit</button>
                                 <a class="btn btn-outline-primary" href="Admin_booking_list.jsp">
                                     Back
                                 </a>
                             <!-- </form> -->
-                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 <!-- Page end  -->
 
