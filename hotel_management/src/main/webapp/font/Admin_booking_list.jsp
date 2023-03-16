@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html >
 <head>
@@ -33,19 +34,39 @@
                                     <tr>
                                         <th style="text-align: center">ID</th>
                                         <th style="text-align: center">Name</th>
-                                        <th style="text-align: center">Book Date</th>
                                         <th style="text-align: center">Phone</th>
-                                        <th style="text-align: center">Arrival Date</th>
+                                        <th style="text-align: center">Check in Date</th>
+                                        <th style="text-align: center">Check out Date</th>
+                                        <th style="text-align: center">Setting</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr >
-                                        <td style="text-align: center" >1</td>
-                                        <td style="text-align: center" ></td>
-                                        <td style="text-align: left" ></td>
-                                        <td style="text-align: center" ></td>
-                                        <td style="text-align: center" ></td>
-                                    </tr>
+                                    <c:forEach items="${list}" var="s">
+                                        <tr>
+                                            <td style="text-align: center">${s.billId}</td>
+                                            <td style="text-align: center">${s.user.userName}</td>
+                                            <td style="text-align: center">${s.user.userPhone}</td>
+                                            <td style="text-align: center">${s.checkInDate}</td>
+                                            <td style="text-align: center">${s.checkOutDate}</td>
+                                            </td>
+
+                                            <td>
+                                                <div class="d-flex  list-action" style="margin-left: 41%;">
+                                                    <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
+                                                       data-placement="top" title="" data-original-title="Edit"
+                                                       href="update-booking?id=${s.billId}"><i class="lar la-edit"></i></a>
+                                                    <a class="badge bg-danger mr-2" data-toggle="tooltip"
+                                                       data-placement="top" title="" data-original-title="Delete"
+                                                       href="delete-booking?id=${s.billId}"
+                                                       onclick="return confirm('Do you want to change delete booking?');">
+                                                        <i class="las la-undo-alt"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </c:forEach>
+
                                     </tbody>
                                 </table>
                             </div>
