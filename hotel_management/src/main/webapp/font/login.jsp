@@ -7,15 +7,15 @@
     <!-- CSS only -->
     <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">-->
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/static/images/favicon.ico">
-    <link rel="stylesheet" href="/static/css/backend-plugin.min.css">
-    <link rel="stylesheet" href="/static/css/backend.css">
-    <link rel="stylesheet" href="/static/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
-    <link rel="stylesheet" href="/static/vendor/remixicon/fonts/remixicon.css">
+    <link rel="shortcut icon" href="static/images/favicon.ico">
+    <link rel="stylesheet" href="static/css/backend-plugin.min.css">
+    <link rel="stylesheet" href="static/css/backend.css">
+    <link rel="stylesheet" href="static/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+    <link rel="stylesheet" href="static/vendor/remixicon/fonts/remixicon.css">
 
-    <link rel="stylesheet" href="/static/vendor/tui-calendar/tui-calendar/dist/tui-calendar.css">
-    <link rel="stylesheet" href="/static/vendor/tui-calendar/tui-date-picker/dist/tui-date-picker.css">
-    <link rel="stylesheet" href="/static/vendor/tui-calendar/tui-time-picker/dist/tui-time-picker.css">
+    <link rel="stylesheet" href="static/vendor/tui-calendar/tui-calendar/dist/tui-calendar.css">
+    <link rel="stylesheet" href="static/vendor/tui-calendar/tui-date-picker/dist/tui-date-picker.css">
+    <link rel="stylesheet" href="static/vendor/tui-calendar/tui-time-picker/dist/tui-time-picker.css">
 </head>
 <body class=" ">
 <!-- loader Start -->
@@ -37,7 +37,7 @@
                                     <div class="p-3">
                                         <h2 class="mb-2 text-white">Sign In</h2>
                                         <p>Login to stay connected.</p>
-                                        <form >
+                                        <form action="login" method="POST">
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="floating-label form-group">
@@ -56,7 +56,7 @@
                                                 <div class="col-lg-6">
                                                     <div class="custom-control custom-checkbox mb-3">
                                                         <input type="checkbox" class="custom-control-input"
-                                                               id="customCheck1" name="remember-me">
+                                                               id="customCheck1" name="remember">
                                                         <label class="custom-control-label control-label-1 text-white"
                                                                for="customCheck1">Remember Me</label>
                                                     </div>

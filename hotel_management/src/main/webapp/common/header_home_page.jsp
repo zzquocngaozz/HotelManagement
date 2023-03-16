@@ -8,7 +8,7 @@
 <header class="site-header js-site-header">
   <div class="container-fluid">
     <div class="row align-items-center">
-      <div class="col-6 col-lg-4 site-logo" data-aos="fade"><a href="Home_page.jsp">Wogo Hotel</a></div>
+      <div class="col-6 col-lg-4 site-logo" data-aos="fade"><a href="home-page">Wogo Hotel</a></div>
       <div class="col-6 col-lg-8">
 
 
@@ -25,9 +25,9 @@
               <div class="row full-height align-items-center">
                 <div class="col-md-6 mx-auto">
                   <ul class="list-unstyled menu">
-                    <li class="active"><a href="Home_page.jsp">Home</a></li>
-                    <li><a href="Home_page_room.jsp">Rooms</a></li>
-                    <li><a href="Home_dash_board.jsp">Dash board</a></li>
+                    <li class="active"><a href="home-page">Home</a></li>
+                    <li><a href="home-page-room">Rooms</a></li>
+                    <li><a href="home-dash-board">Dash board</a></li>
                   </ul>
                 </div>
               </div>

@@ -115,9 +115,66 @@ public class UserDAOImpl extends DBContext implements UserDAO {
         String sql = "SELECT * FROM hotel_management.user where user_id = ?";
         try {
             ps = connection.prepareStatement(sql);
-            ps.setInt(1,userId);
+            ps.setInt(1, userId);
             rs = ps.executeQuery();
-            while (rs.next()){
+            while (rs.next()) {
+                User user = User.builder()
+                        .userId(rs.getInt(1))
+                        .userName(rs.getString(2))
+                        .userEmail(rs.getString(3))
+                        .userPassword(rs.getString(4))
+                        .userRole(rs.getInt(5))
+                        .userDob(rs.getString(6))
+                        .userPhone(rs.getString(7))
+                        .userGender(rs.getInt(8))
+                        .userStatus(rs.getInt(9))
+                        .build();
+                return user;
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+    public boolean checkEmailExist(String email) {
+        String sql = "SELECT * FROM hotel_management.user WHERE user_email = ?";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                if (rs != null) return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean updatePassword(int userId, String password) {
+        String sql = "UPDATE `hotel_management`.`user` SET `user_password` = ? WHERE (`user_id` = ?);";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, password);
+            ps.setInt(2, userId);
+            int isSuccess = ps.executeUpdate();
+            if (isSuccess == 1) return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public User login(String email, String password) {
+        String sql = "SELECT * FROM hotel_management.user where user_email = ? and user_password = ?";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setString(1, email);
+            ps.setString(2, password);
+            rs = ps.executeQuery();
+            while (rs.next()) {
                 User user = User.builder()
                         .userId(rs.getInt(1))
                         .userName(rs.getString(2))
@@ -141,9 +198,11 @@ public class UserDAOImpl extends DBContext implements UserDAO {
     public static void main(String[] args) {
         List<User> userList = new ArrayList<>();
         UserDAOImpl impl = new UserDAOImpl();
-        userList = impl.getAllUser();
+//        userList = impl.getAllUser();
+//
+//        User user = impl.getUserById(1);
+//        System.out.println(user);
 
-        User user = impl.getUserById(1);
-        System.out.println(user);
+        System.out.println(impl.login("admina@gmail.com", "12345678"));
     }
 }

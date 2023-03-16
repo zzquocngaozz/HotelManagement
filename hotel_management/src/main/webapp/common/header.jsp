@@ -7,7 +7,7 @@
 --%>
 <div class="iq-sidebar  sidebar-default ">
     <div class="iq-sidebar-logo d-flex align-items-center">
-        <a href="#" class="header-logo">
+        <a href="home-dash-board" class="header-logo">
             <img src="static/images/logo.svg" alt="logo">
             <h3 class="logo-title light-logo">Hotel</h3>
         </a>
@@ -19,7 +19,7 @@
         <nav class="iq-sidebar-menu">
             <ul id="iq-sidebar-toggle" class="iq-menu">
                 <li class="">
-                    <a href="Home_dash_board.jsp" class="svg-icon">
+                    <a href="home-dash-board" class="svg-icon">
                         <svg class="svg-icon" id="p-dash14" width="20" height="20"
                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li class=" ">
-                    <a href="Admin_booking_list.jsp" class="collapsed">
+                    <a href="list-booking" class="collapsed">
                         <svg class="svg-icon" id="p-dash14" width="20" height="20"
                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li class=" ">
-                    <a href="Admin_service_list.jsp" class="collapsed">
+                    <a href="service-list" class="collapsed">
                         <svg class="svg-icon" id="p-dash14" width="20" height="20"
                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -60,7 +60,7 @@
 
                 <li class=" ">
                     <!--            th:href="@{}"-->
-                    <a href="Admin_room_list.jsp" class="collapsed">
+                    <a href="room-list" class="collapsed">
                         <svg class="svg-icon" id="p-dash14" width="20" height="20"
                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -136,7 +136,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                               d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                                     </svg>
-                                    <a href="#" >Back Home</a>
+                                    <a href="home-dash-board" >Back Home</a>
                                 </li>
                             </ul>
                         </li>

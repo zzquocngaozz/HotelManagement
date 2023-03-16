@@ -11,5 +11,8 @@ public interface UserDAO {
     public boolean deleteUser(int userId, int status);
 
     public User getUserById(int userId);
+    public User login(String email, String password);
+    public boolean updatePassword(int userId, String password);
+    public boolean checkEmailExist(String email);
 
 }
