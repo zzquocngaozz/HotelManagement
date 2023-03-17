@@ -57,7 +57,7 @@
                                             </td>
 
                                             <td>
-                                                <div class="d-flex  list-action" style="margin-left: 41%;">
+                                                <div class="d-flex  list-action" style="margin-left: 41%; justify-content: center;">
                                                     <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
                                                        data-placement="top" title="" data-original-title="Edit"
                                                        href="#"><i class="lar la-eye"></i></a>
