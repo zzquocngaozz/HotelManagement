@@ -60,6 +60,9 @@
                                                 <div class="d-flex  list-action" style="margin-left: 41%;">
                                                     <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
                                                        data-placement="top" title="" data-original-title="Edit"
+                                                       href="#"><i class="lar la-eye"></i></a>
+                                                    <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
+                                                       data-placement="top" title="" data-original-title="Edit"
                                                        href="update-booking?id=${s.billId}"><i class="lar la-edit"></i></a>
 
                                                     <a class="badge ${s.billStatus == 1?"bg-danger":"bg-success"} mr-2"
