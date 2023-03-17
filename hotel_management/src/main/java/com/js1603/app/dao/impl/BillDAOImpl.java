@@ -138,6 +138,23 @@ public class BillDAOImpl extends DBContext implements BillDAO {
     }
 
     @Override
+    public boolean addServiceToBill(int billId, int serviceId) {
+        String sql = "INSERT INTO `hotel_management`.`service_item`\n" +
+                "(`bill_id`,\n" +
+                "`sevice_id`)\n" +
+                "VALUES\n" +
+                "(?,?);";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, billId);
+            ps.setInt(2,serviceId);
+            return  ps.executeUpdate() ==1;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public void DeleteBill(int billId) {
         String sql = "DELETE FROM `hotel_management`.`bill`\n" +
                 "WHERE bill_id = ?;";
@@ -182,15 +199,5 @@ public class BillDAOImpl extends DBContext implements BillDAO {
     public static void main(String[] args) {
         BillDAOImpl dao = new BillDAOImpl();
         System.out.println(dao.getAllBill());
-//        Service service = Service.builder()
-//                .serviceId(8)
-//                .serviceName("Banh Mi")
-//                .servicePrice(150000)
-//                .serviceDescription("No description")
-//                .serviceStatus(1)
-//                .build();
-//        dao.updateService(service);
-//        dao.deleteService(8);
-//        System.out.println(dao.getBillById(1));
     }
 }

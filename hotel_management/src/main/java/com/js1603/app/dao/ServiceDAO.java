@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface ServiceDAO {
     public List<Service> getAllServices();
+    public List<Service> getAllActiveServices();
     public boolean addService(Service service);
     public boolean updateService(Service service);
     public boolean changeStatusService(int serviceId, int status);

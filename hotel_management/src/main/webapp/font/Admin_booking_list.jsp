@@ -63,7 +63,7 @@
                                                        href="bill?id=${s.billId}"><i class="lar la-eye"></i></a>
                                                     <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
                                                        data-placement="top" title="" data-original-title="list service"
-                                                       href="list-service-bill?id=${s.billId}"><i
+                                                       href="list_service_by_bill?id=${s.billId}"><i
                                                             class="las la-plus-circle"></i>
                                                     </a>
                                                     <a class="badge bg-primary-light mr-2" data-toggle="tooltip"

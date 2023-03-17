@@ -30,7 +30,27 @@ public class ServiceDAOImpl extends DBContext implements ServiceDAO {
             throw new RuntimeException(e);
         }
     }
-
+    public List<Service> getAllActiveServices() {
+        List<Service> serviceList = new ArrayList<>();
+        String sql = "SELECT * FROM service WHERE service_status = 1";
+        try {
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Service service = Service.builder()
+                        .serviceId(rs.getInt(1))
+                        .serviceName(rs.getString(2))
+                        .servicePrice(rs.getDouble(3))
+                        .serviceDescription(rs.getString(4))
+                        .serviceStatus(rs.getInt(5))
+                        .build();
+                serviceList.add(service);
+            }
+            return serviceList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public boolean addService(Service service) {
         String sql = "INSERT INTO `service` (`service_name`, `service_price`, `service_description`," +
                 " `service_status`) VALUES (?,?,?, 1);";
@@ -75,6 +95,7 @@ public class ServiceDAOImpl extends DBContext implements ServiceDAO {
         }
         return false;
     }
+
 
     public Service getServiceById(int serviceId) {
         String sql = "SELECT * FROM service WHERE service_id = ?";
