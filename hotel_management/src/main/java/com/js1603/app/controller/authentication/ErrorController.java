@@ -1,4 +1,4 @@
-package com.js1603.app.controller.homepage;
+package com.js1603.app.controller.authentication;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -6,12 +6,11 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "HomeDashBoard", value = "/home-dash-board")
-public class HomeDashBoard extends HttpServlet {
+@WebServlet(name = "ErrorController", value = "/error")
+public class ErrorController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        request.getRequestDispatcher("./font/Home_dash_board.jsp").forward(request, response);
+        request.getRequestDispatcher("./font/error-page.jsp").forward(request, response);
     }
 
     @Override

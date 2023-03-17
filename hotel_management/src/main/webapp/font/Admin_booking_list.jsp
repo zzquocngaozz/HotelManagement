@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html >
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,11 +34,12 @@
                                     <tr>
                                         <th style="text-align: center">ID</th>
                                         <th style="text-align: center">Name</th>
-                                        <th style="text-align: center">Phone</th>
+<%--                                        <th style="text-align: center">Phone</th>--%>
                                         <th style="text-align: center">Room Code</th>
                                         <th style="text-align: center">Check in Date</th>
                                         <th style="text-align: center">Check out Date</th>
                                         <th style="text-align: center">Pre Price</th>
+                                        <th style="text-align: center">Status</th>
                                         <th style="text-align: center">Setting</th>
                                     </tr>
                                     </thead>
@@ -47,11 +48,12 @@
                                         <tr>
                                             <td style="text-align: center">${s.billId}</td>
                                             <td style="text-align: center">${s.user.userName}</td>
-                                            <td style="text-align: center">${s.user.userPhone}</td>
+<%--                                            <td style="text-align: center">${s.user.userPhone}</td>--%>
                                             <td style="text-align: center">${s.room.roomCode}</td>
                                             <td style="text-align: center">${s.checkInDate}</td>
                                             <td style="text-align: center">${s.checkOutDate}</td>
                                             <td style="text-align: center">${s.billPrePrice}</td>
+                                            <td style="text-align: center">${s.billStatus == 1?"Active":"Inactive"}</td>
                                             </td>
 
                                             <td>
@@ -59,10 +61,13 @@
                                                     <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
                                                        data-placement="top" title="" data-original-title="Edit"
                                                        href="update-booking?id=${s.billId}"><i class="lar la-edit"></i></a>
-                                                    <a class="badge bg-danger mr-2" data-toggle="tooltip"
-                                                       data-placement="top" title="" data-original-title="Delete"
-                                                       href="delete-booking?id=${s.billId}"
-                                                       onclick="return confirm('Do you want to change delete booking?');">
+
+                                                    <a class="badge ${s.billStatus == 1?"bg-danger":"bg-success"} mr-2"
+                                                       data-toggle="tooltip"
+                                                       data-placement="top" title=""
+                                                       data-original-title="${s.billStatus == 1?"Inactive":"Active"}"
+                                                       href="delete-booking?id=${s.billId}&status=${s.billStatus}"
+                                                       onclick="return confirm('Do you want to change status booking?');">
                                                         <i class="las la-undo-alt"></i>
                                                     </a>
                                                 </div>

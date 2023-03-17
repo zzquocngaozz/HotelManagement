@@ -23,10 +23,11 @@ public class BillDAOImpl extends DBContext implements BillDAO {
                 "r.room_code,\n" +
                 "b.check_in_date,\n" +
                 "b.check_out_date,\n" +
-                "b.bill_pre_price\n" +
+                "b.bill_pre_price,\n" +
+                "b.bill_status\n" +
                 "FROM user u JOIN bill b\n" +
                 "\tON u.user_id = b.user_id\n" +
-                "    JOIN room r ON r.room_id = b.room_id";
+                "    JOIN room r ON r.room_id = b.room_id;";
         try {
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -38,6 +39,7 @@ public class BillDAOImpl extends DBContext implements BillDAO {
                         .checkInDate(rs.getString(5))
                         .checkOutDate(rs.getString(6))
                         .billPrePrice(rs.getDouble(7))
+                        .billStatus(rs.getInt(8))
                         .build();
                 billList.add(bill);
             }
@@ -52,24 +54,14 @@ public class BillDAOImpl extends DBContext implements BillDAO {
     @Override
     public boolean addBill(Bill bill) {
 
-        String sql = "INSERT INTO `hotel_management`.`bill`\n" +
-                "(`check_in_date`,\n" +
-                "`check_out_date`,\n" +
-                "`bill_pre_price`,\n" +
-                "`room_id`,\n" +
-                "`user_id`)\n" +
-                "VALUES\n" +
-                "(?,\n" +
-                "?,\n" +
-                "?,\n" +
-                "?,\n" +
-                "?);\n";
+        String sql = "INSERT INTO `hotel_management`.`bill` " +
+                "(`check_in_date`, `check_out_date`, `room_id`, `user_id`) VALUES (?, ?, ?, ?);";
         try {
             ps = connection.prepareStatement(sql);
             ps.setString(1, bill.getCheckInDate());
             ps.setString(2, bill.getCheckOutDate());
+            ps.setInt(3, bill.getRoom().getRoomId());
             ps.setInt(4, bill.getUser().getUserId());
-            ps.setInt(5, bill.getRoom().getRoomId());
             return ps.executeUpdate() == 1 ? true : false;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -96,7 +88,19 @@ public class BillDAOImpl extends DBContext implements BillDAO {
 
     @Override
     public boolean changeStatusBill(int billId, int status) {
-        return false;
+        String sql = "UPDATE `hotel_management`.`bill`\n" +
+                "SET`bill_status` = ?\n" +
+                "WHERE `bill_id` = ?;";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, status == 0 ? 1 : 0);
+            ps.setInt(2, billId);
+
+            return ps.executeUpdate() == 1;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

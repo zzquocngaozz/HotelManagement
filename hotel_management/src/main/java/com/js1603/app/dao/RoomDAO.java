@@ -11,4 +11,5 @@ public interface RoomDAO {
     public boolean changeStatusRoom(int roomId, int status);
 
     Room getRoomById(int roomId);
+    List<Room> getRoomByStatus(int status);
 }

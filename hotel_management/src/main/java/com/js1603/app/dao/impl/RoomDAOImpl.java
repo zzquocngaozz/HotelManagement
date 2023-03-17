@@ -105,9 +105,34 @@ public class RoomDAOImpl extends DBContext implements RoomDAO {
         return null;
     }
 
+    @Override
+    public List<Room> getRoomByStatus(int status) {
+        List<Room> roomList = new ArrayList<>();
+        String sql = "SELECT * FROM room WHERE room_status = ?";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, status);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Room room = Room.builder()
+                        .roomId(rs.getInt(1))
+                        .roomCode(rs.getString(2))
+                        .roomPricePerHour(rs.getDouble(3))
+                        .roomDescription(rs.getString(4))
+                        .roomStatus(rs.getInt(5))
+                        .build();
+                roomList.add(room);
+            }
+            return roomList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
     public static void main(String[] args) {
         RoomDAO dao = new RoomDAOImpl();
-        System.out.println(dao.getAllRooms());
+//        System.out.println(dao.getAllRooms());
 //        Room room = Room.builder()
 //                .roomId(7)
 //                .roomCode("HM103")
@@ -117,5 +142,6 @@ public class RoomDAOImpl extends DBContext implements RoomDAO {
 //                .build();
 //        dao.updateRoom(room);
 //        dao.deleteRoom(7);
+        System.out.println(dao.getRoomByStatus(1));
     }
 }

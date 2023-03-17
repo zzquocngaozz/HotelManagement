@@ -5,6 +5,8 @@
   Time: 9:28 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="iq-sidebar  sidebar-default ">
     <div class="iq-sidebar-logo d-flex align-items-center">
         <a href="home-dash-board" class="header-logo">
@@ -123,8 +125,7 @@
                                aria-expanded="false">
                                 <img src="static/images/user/1986.jpg" class="img-fluid rounded-circle" alt="user">
                                 <div class="caption ml-3">
-                                    <h6 class="mb-0 line-height"> Tora<i
-                                            class="las la-angle-down ml-2"></i></h6>
+                                    <h6 class="mb-0 line-height">${sessionScope.user.userName}<i class="las la-angle-down ml-2"></i></h6>
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right border-none"
@@ -134,9 +135,18 @@
                                          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                          stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
                                     </svg>
-                                    <a href="home-dash-board" >Back Home</a>
+                                    <a href="home-dash-board">Back Home</a>
+                                </li>
+                                <li class="dropdown-item  d-flex svg-icon border-top">
+                                    <svg class="svg-icon mr-0 text-primary" id="h-05-p" width="20"
+                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/>
+                                    </svg>
+                                    <a href="logout">Logout</a>
                                 </li>
                             </ul>
                         </li>

@@ -16,4 +16,5 @@ public class Bill {
     private double billPrePrice;
     private Room room;
     private User user;
+    private int billStatus;
 }

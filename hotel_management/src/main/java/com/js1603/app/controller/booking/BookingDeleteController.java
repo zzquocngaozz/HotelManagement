@@ -19,7 +19,8 @@ public class BookingDeleteController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         BillDAO dao = new BillDAOImpl();
         int billId = Integer.parseInt(request.getParameter("id"));
-        dao.DeleteBill(billId);
+        int status = Integer.parseInt(request.getParameter("status"));
+        dao.changeStatusBill(billId, status);
         response.sendRedirect("list-booking");
     }
 

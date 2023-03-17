@@ -32,11 +32,14 @@ public class LoginController extends HttpServlet {
                 session.setAttribute("user", user);
                 int role = user.getUserRole();
                 if (role == 1) {
-                    response.sendRedirect("");
+                    //admin
+                    response.sendRedirect("home-dash-board");
                 } else if (role == 2) {
-                    response.sendRedirect("");
+                    //staff
+                    response.sendRedirect("home-page");
                 } else if (role == 3) {
-                    response.sendRedirect("");
+                    //customer
+                    response.sendRedirect("home-page");
                 }
                 return;
             } else {
@@ -67,17 +70,19 @@ public class LoginController extends HttpServlet {
             session.setAttribute("user", user);
             int role = user.getUserRole();
             if (role == 1) {
-                response.sendRedirect("");
+                //admin
+                response.sendRedirect("home-dash-board");
             } else if (role == 2) {
-                response.sendRedirect("");
+                //staff
+                response.sendRedirect("home-page");
             } else if (role == 3) {
-                response.sendRedirect("");
+                //customer
+                response.sendRedirect("home-page");
             }
         } else {
             request.setAttribute("error", "Email or password incorrect");
             request.setAttribute("email", email);
             request.getRequestDispatcher("./font/login.jsp").forward(request, response);
         }
-
     }
 }
