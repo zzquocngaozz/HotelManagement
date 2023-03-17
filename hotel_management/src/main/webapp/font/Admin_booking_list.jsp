@@ -57,10 +57,15 @@
                                             </td>
 
                                             <td>
-                                                <div class="d-flex  list-action" style="margin-left: 41%; justify-content: center;">
+                                                <div class="d-flex  list-action" style="margin-left: 15%; justify-content: center;">
                                                     <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
-                                                       data-placement="top" title="" data-original-title="Edit"
+                                                       data-placement="top" title="" data-original-title="checkout"
                                                        href="#"><i class="lar la-eye"></i></a>
+                                                    <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
+                                                       data-placement="top" title="" data-original-title="list service"
+                                                       href="list-service-bill?id=${s.billId}"><i
+                                                            class="las la-plus-circle"></i>
+                                                    </a>
                                                     <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
                                                        data-placement="top" title="" data-original-title="Edit"
                                                        href="update-booking?id=${s.billId}"><i class="lar la-edit"></i></a>
