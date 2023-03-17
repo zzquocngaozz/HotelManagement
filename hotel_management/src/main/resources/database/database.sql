@@ -38,7 +38,7 @@ CREATE TABLE `bill` (
   KEY `fk_bill_user1_idx` (`user_id`),
   CONSTRAINT `fk_bill_Room` FOREIGN KEY (`room_id`) REFERENCES `room` (`room_id`),
   CONSTRAINT `fk_bill_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +47,7 @@ CREATE TABLE `bill` (
 
 LOCK TABLES `bill` WRITE;
 /*!40000 ALTER TABLE `bill` DISABLE KEYS */;
-INSERT INTO `bill` VALUES (1,'2023-03-08 07:00:00','2023-03-18 16:02:00',100001,1,5,1),(2,'2023-02-13 07:00:00','2023-02-13 23:14:45',0,2,6,1),(3,'2023-02-14 13:00:00','2023-02-15 07:00:00',230000,3,7,1);
+INSERT INTO `bill` VALUES (1,'2023-03-08 07:00:00','2023-03-18 16:02:00',100001,1,5,1),(2,'2023-02-13 07:00:00','2023-02-13 23:14:45',0,2,6,1),(3,'2023-02-14 13:00:00','2023-02-15 07:00:00',230000,3,7,1),(6,'2023-03-09 19:43:00','2023-03-31 19:43:00',0,4,5,1);
 /*!40000 ALTER TABLE `bill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -76,7 +76,7 @@ CREATE TABLE `room` (
 
 LOCK TABLES `room` WRITE;
 /*!40000 ALTER TABLE `room` DISABLE KEYS */;
-INSERT INTO `room` VALUES (1,'HM101',20000,'no description','0'),(2,'HM201',30000,'no description ','0'),(3,'HM301',40000,'no description ','0'),(4,'HM401',25000,'no description ','1'),(5,'HM102',30000,'no description ','1'),(6,'HM202',20000,'no description ','1'),(7,'HM103',160000,'No description','1'),(8,'HM105',20000,'no problem','1');
+INSERT INTO `room` VALUES (1,'HM101',20000,'no description','0'),(2,'HM201',30000,'no description ','0'),(3,'HM301',40000,'no description ','0'),(4,'HM401',25000,'no description ','0'),(5,'HM102',30000,'no description ','1'),(6,'HM202',20000,'no description ','1'),(7,'HM103',160000,'No description','1'),(8,'HM105',20000,'no problem','1');
 /*!40000 ALTER TABLE `room` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,4 +178,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-17 16:25:36
+-- Dump completed on 2023-03-17 19:46:10
