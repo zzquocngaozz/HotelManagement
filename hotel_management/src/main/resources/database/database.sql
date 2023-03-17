@@ -31,13 +31,14 @@ CREATE TABLE `bill` (
   `bill_pre_price` double NOT NULL DEFAULT '0',
   `room_id` int NOT NULL,
   `user_id` int NOT NULL,
+  `bill_status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`bill_id`),
   UNIQUE KEY `bill_id_UNIQUE` (`bill_id`),
   KEY `fk_bill_Room_idx` (`room_id`),
   KEY `fk_bill_user1_idx` (`user_id`),
   CONSTRAINT `fk_bill_Room` FOREIGN KEY (`room_id`) REFERENCES `room` (`room_id`),
   CONSTRAINT `fk_bill_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +47,7 @@ CREATE TABLE `bill` (
 
 LOCK TABLES `bill` WRITE;
 /*!40000 ALTER TABLE `bill` DISABLE KEYS */;
-INSERT INTO `bill` VALUES (1,'2023-03-08 07:00:00','2023-03-09 16:02:00',100000,1,5),(2,'2023-02-13 07:00:00','2023-02-13 23:14:45',0,2,6),(3,'2023-02-14 13:00:00','2023-02-15 07:00:00',230000,3,7);
+INSERT INTO `bill` VALUES (1,'2023-03-08 07:00:00','2023-03-18 16:02:00',100001,1,5,1),(2,'2023-02-13 07:00:00','2023-02-13 23:14:45',0,2,6,1),(3,'2023-02-14 13:00:00','2023-02-15 07:00:00',230000,3,7,1);
 /*!40000 ALTER TABLE `bill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,7 +76,7 @@ CREATE TABLE `room` (
 
 LOCK TABLES `room` WRITE;
 /*!40000 ALTER TABLE `room` DISABLE KEYS */;
-INSERT INTO `room` VALUES (1,'HM101',20000,'no description','1'),(2,'HM201',30000,'no description ','1'),(3,'HM301',40000,'no description ','1'),(4,'HM401',25000,'no description ','1'),(5,'HM102',30000,'no description ','1'),(6,'HM202',20000,'no description ','1'),(7,'HM103',160000,'No description','1'),(8,'HM105',20000,'no problem','1');
+INSERT INTO `room` VALUES (1,'HM101',20000,'no description','0'),(2,'HM201',30000,'no description ','0'),(3,'HM301',40000,'no description ','0'),(4,'HM401',25000,'no description ','1'),(5,'HM102',30000,'no description ','1'),(6,'HM202',20000,'no description ','1'),(7,'HM103',160000,'No description','1'),(8,'HM105',20000,'no problem','1');
 /*!40000 ALTER TABLE `room` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,7 +156,7 @@ CREATE TABLE `user` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_id_UNIQUE` (`user_id`),
   UNIQUE KEY `user_email_UNIQUE` (`user_email`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -164,7 +165,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admina','admina@gmail.com','12345678','1','2001-09-15','0355166404','1','1'),(2,'adminb','adminb@gmail.com','12345678','1','1995-12-15','0395728593','0','1'),(3,'staffa','staffa@gmail.com','12345678','2','2002-01-23','0938572853','1','1'),(4,'staffb','staffb@gmail.com','12345678','2','2000-05-30','0369564935','0','1'),(5,'customera','customera@gmail.com','12345678','3','1994-07-23','0243593649','1','1'),(6,'customerb','customerb@gmail.com','12345678','3','1996-05-10','0348658765','0','1'),(7,'customerc','customerc@gmail.com','12345678','3','1983-01-30','0395464568','0','1');
+INSERT INTO `user` VALUES (1,'admina','admina@gmail.com','12345678','1','2001-09-15','0355166404','1','1'),(2,'adminb','adminb@gmail.com','12345678','1','1995-12-15','0395728593','0','1'),(3,'staffa','staffa@gmail.com','12345678','2','2002-01-23','0938572853','1','1'),(4,'staffb','staffb@gmail.com','12345678','2','2000-05-30','0369564935','0','1'),(5,'customera','customera@gmail.com','12345678','3','1994-07-23','0243593649','1','1'),(6,'customerb','customerb@gmail.com','12345678','3','1996-05-10','0348658765','0','1'),(7,'customerc','customerc@gmail.com','12345678','3','1983-01-30','0395464568','0','1'),(8,'customerd','customerd@gmail.com','12345678','3','1983-01-30','0923243546','1','1');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -177,4 +178,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-16 17:26:38
+-- Dump completed on 2023-03-17 16:25:36

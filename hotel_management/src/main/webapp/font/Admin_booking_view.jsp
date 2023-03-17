@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html >
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,13 +34,26 @@
                                     <tr>
                                         <th style="text-align: center">No.</th>
                                         <th style="text-align: center">Item Description</th>
-                                        <th style="text-align: center">Price</th>                                    </tr>
+                                        <th style="text-align: center">Price</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                    <tr >
-                                        <td style="text-align: center" >1</td>
-                                        <td style="text-align: center" ></td>
-                                        <td style="text-align: center" >12</td>
+                                    <tr>
+                                        <td style="text-align: center">0</td>
+                                        <td style="text-align: center">Room: H211</td>
+                                        <td style="text-align: center">1000</td>
+                                        <th style="text-align: left">$</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center">1</td>
+                                        <td style="text-align: center">Bike Cycle</td>
+                                        <td style="text-align: center">12</td>
+                                        <th style="text-align: left">$</th>
+                                    </tr>
+                                    <tr>
+                                        <th></th>
+                                        <th style="text-align: center">Subtotal :</th>
+                                        <th style="text-align: center">123</th>
                                         <th style="text-align: left">$</th>
                                     </tr>
                                     </tbody>
@@ -48,19 +61,19 @@
                             </div>
 
                         </div>
-                        <div class="card-height" >
-                            <div class="table-responsive" >
-                                <table class="table" style="width:100%">
-                                    <thead>
-                                    <tr>
-                                        <th style="text-align: right">Subtotal :</th>
-                                        <th style="text-align: center">123</th>
-                                        <th style="text-align: left">$</th>
-                                    </tr>
+<%--                        <div class="card-height">--%>
+<%--                            <div class="table-responsive">--%>
+<%--                                <table class="table" style="width:100%">--%>
+<%--                                    <thead>--%>
+<%--                                    <tr>--%>
+<%--                                        <th style="text-align: right">Subtotal :</th>--%>
+<%--                                        <th style="text-align: center">123</th>--%>
+<%--                                        <th style="text-align: left">$</th>--%>
+<%--                                    </tr>--%>
 
-                                </table>
-                            </div>
-                        </div>
+<%--                                </table>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
                     </div>
                 </div>
             </div>
