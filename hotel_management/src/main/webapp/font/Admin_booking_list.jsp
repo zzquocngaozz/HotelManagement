@@ -74,9 +74,10 @@
                                                        data-toggle="tooltip"
                                                        data-placement="top" title=""
                                                        data-original-title="${s.billStatus == 1?"Inactive":"Active"}"
-                                                       href="delete-booking?id=${s.billId}&status=${s.billStatus}"
+                                                       href="#"
                                                        onclick="return confirm('Do you want to change status booking?');">
                                                         <i class="las la-undo-alt"></i>
+<%--                                                        delete-booking?id=${s.billId}&status=${s.billStatus}--%>
                                                     </a>
                                                 </div>
                                             </td>

@@ -129,29 +129,6 @@ public class RoomDAOImpl extends DBContext implements RoomDAO {
         }
     }
 
-    @Override
-    public Room showBillRoomByBillId(int billId) {
-        String sql = "SELECT * FROM room WHERE room_id = ?";
-        try {
-            ps = connection.prepareStatement(sql);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                Room room = Room.builder()
-                        .roomId(rs.getInt(1))
-                        .roomCode(rs.getString(2))
-                        .roomPricePerHour(rs.getDouble(3))
-                        .roomDescription(rs.getString(4))
-                        .roomStatus(rs.getInt(5))
-                        .build();
-                return room;
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return null;
-    }
-
-
     public static void main(String[] args) {
         RoomDAO dao = new RoomDAOImpl();
 //        System.out.println(dao.getAllRooms());

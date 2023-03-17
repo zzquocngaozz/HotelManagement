@@ -62,14 +62,14 @@
                             <label for="checkin" class="font-weight-bold text-black">Check In</label>
                             <div class="field-icon-wrap">
                                 <div class="icon"><span class="icon-calendar"></span></div>
-                                <input type="datetime-local" id="checkin" class="form-control" name="checkin">
+                                <input type="datetime-local" required id="checkin" class="form-control" name="checkin">
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
                             <label for="checkout" class="font-weight-bold text-black">Check Out</label>
                             <div class="field-icon-wrap">
                                 <div class="icon"><span class="icon-calendar"></span></div>
-                                <input type="datetime-local" id="checkout" class="form-control" name="checkout">
+                                <input type="datetime-local" required id="checkout" class="form-control" name="checkout">
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 mb-md-0 col-lg-3">

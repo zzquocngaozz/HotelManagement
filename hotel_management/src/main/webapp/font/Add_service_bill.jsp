@@ -49,7 +49,7 @@
                                      </div>
                                  </div>
                                 <button type="submit" class="btn btn-outline-success">Add</button>
-                                <a class="btn btn-outline-primary" href="list_service_by_bill">
+                                <a class="btn btn-outline-primary" href="list_service_by_bill?id=${sessionScope.billId}">
                                     Back
                                 </a>
                             </form>

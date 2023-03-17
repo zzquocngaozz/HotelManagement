@@ -12,5 +12,4 @@ public interface RoomDAO {
 
     Room getRoomById(int roomId);
     List<Room> getRoomByStatus(int status);
-    Room showBillRoomByBillId(int billId);
 }

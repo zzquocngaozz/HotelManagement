@@ -1,10 +1,7 @@
 package com.js1603.app.dao.impl;
 
 import com.js1603.app.dao.BillDAO;
-import com.js1603.app.model.Bill;
-import com.js1603.app.model.Room;
-import com.js1603.app.model.Service;
-import com.js1603.app.model.User;
+import com.js1603.app.model.*;
 import com.js1603.app.util.DBContext;
 
 import java.sql.SQLException;
@@ -196,8 +193,40 @@ public class BillDAOImpl extends DBContext implements BillDAO {
         return 0;
     }
 
+    @Override
+    public BillRoom showBillRoomByBillId(int billId) {
+        String sql = "SELECT \n" +
+                "b.bill_id,\n" +
+                "r.room_code as 'room code',\n" +
+                "r.room_price_per_hour,\n" +
+                "TIMESTAMPDIFF(HOUR,b.check_in_date,check_out_date) as 'hour_in',\n" +
+                "b.bill_pre_price,\n" +
+                "(r.room_price_per_hour * TIMESTAMPDIFF(HOUR,b.check_in_date,check_out_date)) - b.bill_pre_price as 'sum_room'\n" +
+                "FROM bill b JOIN room r on b.room_id = r.room_id WHERE b.bill_id = ?";
+        try {
+            ps = connection.prepareStatement(sql);
+            ps.setInt(1, billId);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                BillRoom br = BillRoom.builder()
+                        .billId(rs.getInt(1))
+                        .roomCode(rs.getString(2))
+                        .roomPricePerHour(rs.getDouble(3))
+                        .hourIn(rs.getInt(4))
+                        .billPrePrice(rs.getDouble(5))
+                        .summaryRoom(rs.getDouble(6))
+                        .build();
+                return br;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         BillDAOImpl dao = new BillDAOImpl();
-        System.out.println(dao.getAllBill());
+//        System.out.println(dao.getAllBill());
+        System.out.println(dao.showBillRoomByBillId(1));
     }
 }

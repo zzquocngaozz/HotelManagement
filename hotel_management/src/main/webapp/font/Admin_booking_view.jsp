@@ -41,11 +41,11 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td style="text-align: center">1</td>
-                                        <td style="text-align: center">H112R</td>
-                                        <td style="text-align: center">120</td>
-                                        <td style="text-align: center">10</td>
-                                        <td style="text-align: center">1200</td>
+                                        <td style="text-align: center">${billRoom.billId}</td>
+                                        <td style="text-align: center">${billRoom.roomCode}</td>
+                                        <td style="text-align: center">${billRoom.roomPricePerHour}</td>
+                                        <td style="text-align: center">${billRoom.hourIn}</td>
+                                        <td style="text-align: center">${billRoom.summaryRoom}</td>
                                         <th style="text-align: left">$</th>
                                     </tr>
                                     <tr>
@@ -53,7 +53,7 @@
                                         <th></th>
                                         <th></th>
                                         <th style="text-align: center">Subtotal :</th>
-                                        <th style="text-align: center">1200</th>
+                                        <th style="text-align: center">${billRoom.summaryRoom}</th>
                                         <th style="text-align: left">$</th>
                                     </tr>
                                     </tbody>
@@ -64,29 +64,68 @@
                     </div>
                 </div>
 
-<%--                <div class="col-lg-12">--%>
-<%--                    <div class="card card-block card-stretch card-height">--%>
-<%--                        <div class="card-header d-flex justify-content-between">--%>
-<%--                            <div class="iq-header-title">--%>
-<%--                                <h4 class="card-title mb-0">View bill Service</h4>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                        <div class="card-body">--%>
-<%--                            <div class="table-responsive">--%>
-<%--                                <table class="table" style="width:100%">--%>
-<%--                                    <thead>--%>
-<%--                                    <tr>--%>
-<%--                                        <th style="text-align: center">No.</th>--%>
-<%--                                        <th style="text-align: center">Item Description</th>--%>
-<%--                                        <th style="text-align: center">Price</th>--%>
-<%--                                    </tr>--%>
-<%--                                    </thead>--%>
-<%--                                </table>--%>
-<%--                            </div>--%>
+                <div class="col-lg-12">
+                    <div class="card card-block card-stretch card-height">
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="iq-header-title">
+                                <h4 class="card-title mb-0">View bill Service</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table" style="width:100%">
+                                    <thead>
+                                    <tr>
+                                        <th style="text-align: center">No.</th>
+                                        <th style="text-align: center">Item Description</th>
+                                        <th style="text-align: center">Price</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${billServiceList}" var="b">
+                                        <tr>
+                                            <td style="text-align: center">${b.billId}</td>
+                                            <td style="text-align: center">${b.serviceName}</td>
+                                            <td style="text-align: center">${b.servicePrice}</td>
+                                            <th style="text-align: left">$</th>
+                                        </tr>
+                                    </c:forEach>
+                                    <tr>
+                                        <th></th>
+                                        <th style="text-align: center">Subtotal :</th>
+                                        <th style="text-align: center">${summaryService}</th>
+                                        <th style="text-align: left">$</th>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
+                <div class="col-lg-12">
+                    <div class="card card-block card-stretch card-height">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table" style="width:100%">
+                                    <thead>
+                                    <tr>
+                                        <th style="text-align: left">
+                                            <a href="checkout?id=${billRoom.billId}">
+                                                <button class="btn btn-info">Checkout</button>
+                                            </a>
+                                        </th>
+                                        <th style="text-align: center"></th>
+                                        <th></th>
+                                        <th style="text-align: center">Total: ${total}(deposit deducted)</th>
+                                        <th>$</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
