@@ -52,7 +52,9 @@
                                             <input type="date"  class="form-control" value="${bill.checkOutDate}"
                                                    name="bookingCkout">
                                         </div>
-                                </div>
+
+                                        <input type="hidden"  name="billId" value="${bill.billId}">
+                                    </div>
                                 <button type="submit" class="btn btn-outline-success">Edit</button>
                                 <a class="btn btn-outline-primary" href="Admin_booking_list.jsp">
                                     Back

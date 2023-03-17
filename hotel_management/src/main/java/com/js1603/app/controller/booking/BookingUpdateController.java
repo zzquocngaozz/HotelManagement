@@ -29,16 +29,19 @@ public class BookingUpdateController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         BillDAO dao = new BillDAOImpl();
+        String billId = request.getParameter("billId");
         int name = Integer.parseInt(request.getParameter("bookingNameId"));
         int room = Integer.parseInt(request.getParameter("bookingRoomId"));
         String  cki = request.getParameter("bookingCki");
         String  cko = request.getParameter("bookingCkout");
         Bill bill = Bill.builder()
+                .billId(billId)
                 .user(User.builder().userId(name).build())
                 .room(Room.builder().roomId(room).build())
                 .checkInDate(cki)
                 .checkOutDate(cko)
                 .build();
+        System.out.println(bill);
         dao.updateBill(bill);
         response.sendRedirect("list-booking");
     }

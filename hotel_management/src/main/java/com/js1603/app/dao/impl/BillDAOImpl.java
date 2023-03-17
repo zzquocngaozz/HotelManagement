@@ -16,8 +16,10 @@ public class BillDAOImpl extends DBContext implements BillDAO {
     @Override
     public List<Bill> getAllBill() {
         List<Bill> billList = new ArrayList<>();
-        String sql = "SELECT bill_id, user_name, user_phone, check_in_date, check_out_date FROM bill join user \n" +
-                "on bill.user_id = user.user_id";
+        String sql = "SELECT bill_id, user_name, user_phone,room_code, bill_pre_price, check_in_date, check_out_date FROM bill join user\n" +
+                "on bill.user_id = user.user_id\n" +
+                "join room\n" +
+                "on bill.room_id = room.room_id";
         try {
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -25,8 +27,10 @@ public class BillDAOImpl extends DBContext implements BillDAO {
                 Bill bill = Bill.builder()
                         .billId(rs.getString(1))
                         .user(User.builder().userName(rs.getString(2)).userPhone(rs.getString(3)).build())
-                        .checkInDate(rs.getString(4))
-                        .checkOutDate(rs.getString(5))
+                        .room(Room.builder().roomCode(rs.getString(4)).build())
+                        .billPrePrice(rs.getDouble(5))
+                        .checkInDate(rs.getString(6))
+                        .checkOutDate(rs.getString(7))
                         .build();
                 billList.add(bill);
             }
@@ -70,20 +74,21 @@ public class BillDAOImpl extends DBContext implements BillDAO {
     @Override
     public boolean updateBill(Bill bill) {
 
-        System.out.println(bill);
+        System.out.println("update bill " + bill);
         String sql = "UPDATE `hotel_management`.`bill`\n" +
                 "SET\n" +
-                "`check_in_date` = ?" +
-                "`check_out_date` = ?" +
-                "`room_id` = ?" +
-                "`user_id` = ?" +
+                "`check_in_date` = ?, " +
+                "`check_out_date` = ?, " +
+                "`room_id` = ?, " +
+                "`user_id` = ? " +
                 "WHERE `bill_id` = ?;";
         try {
             ps = connection.prepareStatement(sql);
-            ps.setInt(4, bill.getUser().getUserId());
-            ps.setInt(3, bill.getRoom().getRoomId());
             ps.setTimestamp(1, Timestamp.valueOf(bill.getCheckInDate()+ " 00:00:00"));
             ps.setTimestamp(2, Timestamp.valueOf(bill.getCheckOutDate()+ " 00:00:00"));
+            ps.setInt(3, bill.getRoom().getRoomId());
+            ps.setInt(4, bill.getUser().getUserId());
+            ps.setInt(5, Integer.parseInt(bill.getBillId()));
             return ps.executeUpdate() == 1 ? true : false;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -106,6 +111,7 @@ public class BillDAOImpl extends DBContext implements BillDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 Bill bill = Bill.builder()
+                        .billId(rs.getInt(1)+ "" )
                         .user(User.builder().userId(rs.getInt(5)).build())
                         .room(Room.builder().roomId(rs.getInt(6)).build())
                         .checkInDate(rs.getString(2))
