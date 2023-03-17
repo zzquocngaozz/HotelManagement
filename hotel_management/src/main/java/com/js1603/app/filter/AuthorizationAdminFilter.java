@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebFilter(filterName = "AuthorizationAdminFilter",
-        urlPatterns = {"/user-list", "/add-user", "/delete-user", "/update-user", "/home-dash-board"})
+        urlPatterns = {"/user-list", "/add-user", "/delete-user", "/update-user"})
 
 public class AuthorizationAdminFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {

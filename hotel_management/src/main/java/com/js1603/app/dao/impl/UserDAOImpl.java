@@ -153,6 +153,21 @@ public class UserDAOImpl extends DBContext implements UserDAO {
         return false;
     }
 
+    @Override
+    public int getUserNumber() {
+        String sql = "SELECT COUNT(*) FROM user WHERE user_status = 1";
+        try {
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
     public boolean updatePassword(int userId, String password) {
         String sql = "UPDATE `hotel_management`.`user` SET `user_password` = ? WHERE (`user_id` = ?);";
         try {
@@ -203,6 +218,7 @@ public class UserDAOImpl extends DBContext implements UserDAO {
 //        User user = impl.getUserById(1);
 //        System.out.println(user);
 
-        System.out.println(impl.login("admina@gmail.com", "12345678"));
+//        System.out.println(impl.login("admina@gmail.com", "12345678"));
+        System.out.println(impl.getUserNumber());
     }
 }

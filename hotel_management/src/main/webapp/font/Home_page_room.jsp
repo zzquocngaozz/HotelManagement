@@ -38,7 +38,7 @@
             <div class="col-md-10 text-center" data-aos="fade">
                 <h1 class="heading mb-3">Rooms</h1>
                 <ul class="custom-breadcrumbs mb-4">
-                    <li><a href="Home_page.jsp">Home</a></li>
+                    <li>Home</li>
                     <li>&bullet;</li>
                     <li>Rooms</li>
                 </ul>

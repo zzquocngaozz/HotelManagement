@@ -36,7 +36,7 @@ public class LoginController extends HttpServlet {
                     response.sendRedirect("home-dash-board");
                 } else if (role == 2) {
                     //staff
-                    response.sendRedirect("home-page");
+                    response.sendRedirect("home-dash-board");
                 } else if (role == 3) {
                     //customer
                     response.sendRedirect("home-page");
@@ -74,7 +74,7 @@ public class LoginController extends HttpServlet {
                 response.sendRedirect("home-dash-board");
             } else if (role == 2) {
                 //staff
-                response.sendRedirect("home-page");
+                response.sendRedirect("home-dash-board");
             } else if (role == 3) {
                 //customer
                 response.sendRedirect("home-page");

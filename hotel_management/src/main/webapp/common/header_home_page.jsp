@@ -29,7 +29,9 @@
                                     <ul class="list-unstyled menu">
                                         <li class="active"><a href="home-page">Home</a></li>
                                         <li><a href="home-page-room">Rooms</a></li>
-                                        <li><a href="home-dash-board">Dash board</a></li>
+                                        <c:if test="${sessionScope.user.userRole == 1}">
+                                            <li><a href="home-dash-board">Dash board</a></li>
+                                        </c:if>
                                         <c:if test="${sessionScope.user != null}">
                                             <li><a href="logout">Logout</a></li>
                                             <li><a href="home-page">${sessionScope.user.userName}</a></li>

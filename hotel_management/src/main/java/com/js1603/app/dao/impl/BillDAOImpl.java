@@ -150,6 +150,35 @@ public class BillDAOImpl extends DBContext implements BillDAO {
         }
     }
 
+    @Override
+    public int getNumberBills() {
+        String sql = "SELECT COUNT(*) FROM bill WHERE bill_status = 1";
+        try {
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public int getNumberService() {
+        String sql = "SELECT COUNT(*) FROM service WHERE service_status = 1";
+        try {
+            ps = connection.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
     public static void main(String[] args) {
         BillDAOImpl dao = new BillDAOImpl();
         System.out.println(dao.getAllBill());

@@ -60,7 +60,7 @@
                                                 <div class="d-flex  list-action" style="margin-left: 15%; justify-content: center;">
                                                     <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
                                                        data-placement="top" title="" data-original-title="checkout"
-                                                       href="#"><i class="lar la-eye"></i></a>
+                                                       href="bill?id=${s.billId}"><i class="lar la-eye"></i></a>
                                                     <a class="badge bg-primary-light mr-2" data-toggle="tooltip"
                                                        data-placement="top" title="" data-original-title="list service"
                                                        href="list-service-bill?id=${s.billId}"><i

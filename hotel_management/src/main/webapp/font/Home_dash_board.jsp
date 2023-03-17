@@ -30,7 +30,7 @@
                             </div>
                             <div class="d-flex align-items-center justify-content-between mt-1">
                                 <p class="mb-0">Total User</p>
-                                <span class="text-primary">12</span>
+                                <span class="text-primary">${numberUser}</span>
                             </div>
                             <div class="iq-progress-bar bg-primary-light mt-2">
                                 <span class="bg-primary iq-progress progress-1" data-percent="100"></span>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="d-flex align-items-center justify-content-between mt-1">
                                 <p class="mb-0">Total Booking</p>
-                                <span class="text-warning">12</span>
+                                <span class="text-warning">${numberBill}</span>
                             </div>
                             <div class="iq-progress-bar bg-warning-light mt-2">
                                 <span class="bg-warning iq-progress progress-1" data-percent="100"></span>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="d-flex align-items-center justify-content-between mt-1">
                                 <p class="mb-0">Total Service</p>
-                                <span class="text-success">12</span>
+                                <span class="text-success">${numberService}</span>
                             </div>
                             <div class="iq-progress-bar bg-success-light mt-2">
                                 <span class="bg-success iq-progress progress-1" data-percent="100"></span>

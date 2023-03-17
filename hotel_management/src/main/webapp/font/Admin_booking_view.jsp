@@ -24,7 +24,7 @@
                     <div class="card card-block card-stretch card-height">
                         <div class="card-header d-flex justify-content-between">
                             <div class="iq-header-title">
-                                <h4 class="card-title mb-0">View bill Booking</h4>
+                                <h4 class="card-title mb-0">View bill Room</h4>
                             </div>
                         </div>
                         <div class="card-body">
@@ -33,27 +33,27 @@
                                     <thead>
                                     <tr>
                                         <th style="text-align: center">No.</th>
-                                        <th style="text-align: center">Item Description</th>
+                                        <th style="text-align: center">Room Code</th>
+                                        <th style="text-align: center">Price Per Hour</th>
+                                        <th style="text-align: center">Hour in</th>
                                         <th style="text-align: center">Price</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td style="text-align: center">0</td>
-                                        <td style="text-align: center">Room: H211</td>
-                                        <td style="text-align: center">1000</td>
-                                        <th style="text-align: left">$</th>
-                                    </tr>
-                                    <tr>
                                         <td style="text-align: center">1</td>
-                                        <td style="text-align: center">Bike Cycle</td>
-                                        <td style="text-align: center">12</td>
+                                        <td style="text-align: center">H112R</td>
+                                        <td style="text-align: center">120</td>
+                                        <td style="text-align: center">10</td>
+                                        <td style="text-align: center">1200</td>
                                         <th style="text-align: left">$</th>
                                     </tr>
                                     <tr>
                                         <th></th>
+                                        <th></th>
+                                        <th></th>
                                         <th style="text-align: center">Subtotal :</th>
-                                        <th style="text-align: center">123</th>
+                                        <th style="text-align: center">1200</th>
                                         <th style="text-align: left">$</th>
                                     </tr>
                                     </tbody>
@@ -61,21 +61,32 @@
                             </div>
 
                         </div>
-<%--                        <div class="card-height">--%>
+                    </div>
+                </div>
+
+<%--                <div class="col-lg-12">--%>
+<%--                    <div class="card card-block card-stretch card-height">--%>
+<%--                        <div class="card-header d-flex justify-content-between">--%>
+<%--                            <div class="iq-header-title">--%>
+<%--                                <h4 class="card-title mb-0">View bill Service</h4>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <div class="card-body">--%>
 <%--                            <div class="table-responsive">--%>
 <%--                                <table class="table" style="width:100%">--%>
 <%--                                    <thead>--%>
 <%--                                    <tr>--%>
-<%--                                        <th style="text-align: right">Subtotal :</th>--%>
-<%--                                        <th style="text-align: center">123</th>--%>
-<%--                                        <th style="text-align: left">$</th>--%>
+<%--                                        <th style="text-align: center">No.</th>--%>
+<%--                                        <th style="text-align: center">Item Description</th>--%>
+<%--                                        <th style="text-align: center">Price</th>--%>
 <%--                                    </tr>--%>
-
+<%--                                    </thead>--%>
 <%--                                </table>--%>
 <%--                            </div>--%>
+
 <%--                        </div>--%>
-                    </div>
-                </div>
+<%--                    </div>--%>
+<%--                </div>--%>
             </div>
         </div>
     </div>

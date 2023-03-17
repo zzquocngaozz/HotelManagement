@@ -14,7 +14,7 @@ import java.io.IOException;
 @WebFilter(filterName = "AuthorizationStaffFilter ",
         urlPatterns = {"/add-booking", "/delete-booking", "/list-booking", "/update-booking",
                 "/room-add", "/room-update", "/room-list", "/room-delete",
-                "/service-add", "/service-list", "/service-update", "/service-delete"})
+                "/service-add", "/service-list", "/service-update", "/service-delete", "/home-dash-board", "/bill"})
 public class AuthorizationAdminStaffFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
     }

@@ -31,7 +31,7 @@ public class Homepage extends HttpServlet {
         HttpSession session = request.getSession();
 
         User user = (User) session.getAttribute("user");
-        if(user == null) {
+        if(user == null || user.getUserRole() != 3) {
             response.sendRedirect("error");
             return;
         }

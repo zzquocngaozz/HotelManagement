@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<<<<<<< HEAD
 <!doctype html>
 <html>
 <head>
@@ -54,7 +53,8 @@
                                         <div class="form-group col-md-12">
                                             <label>Description :</label>
                                             <textarea class="form-control"
-                                                      placeholder="Description service" name="roomDescription"></textarea>
+                                                      placeholder="Description service"
+                                                      name="roomDescription"></textarea>
                                         </div>
 
                                     </div>
@@ -107,13 +107,10 @@
 
     <!-- <script src="../assets/vendor/moment.min.js"></script> -->
 </body>
-=======
 <html>
-  <head>
+<head>
     <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
->>>>>>> 8e2e0187be8377c13cd993ac5e87a7bc295d5aa7
+</head>
+<body>
+</body>
 </html>

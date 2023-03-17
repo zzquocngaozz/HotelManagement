@@ -12,4 +12,6 @@ public interface BillDAO {
     public Bill getBillById(int billId);
 
     public void DeleteBill(int billId);
+    public int getNumberBills();
+    public int getNumberService();
 }
