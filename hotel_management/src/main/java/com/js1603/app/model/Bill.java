@@ -10,7 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Bill {
-    private String billId;
+    private int billId;
     private String checkInDate;
     private String checkOutDate;
     private double billPrePrice;

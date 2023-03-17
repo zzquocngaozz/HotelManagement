@@ -20,11 +20,13 @@ import java.util.Date;
 
 @WebServlet(name = "BookingUpdateController", value = "/update-booking")
 public class BookingUpdateController extends HttpServlet {
+    private int id = 0;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         BillDAO dao = new BillDAOImpl();
         int billId = Integer.parseInt(request.getParameter("id"));
         Bill bill = dao.getBillById(billId);
+        id = billId;
         request.setAttribute("bill", bill);
         request.getRequestDispatcher("./font/Admin_booking_edit.jsp").forward(request, response);
     }
@@ -32,16 +34,15 @@ public class BookingUpdateController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         BillDAO dao = new BillDAOImpl();
-        int name = Integer.parseInt(request.getParameter("bookingNameId"));
-        int room = Integer.parseInt(request.getParameter("bookingRoomId"));
-        String  cki = request.getParameter("bookingCki");
-        String  cko = request.getParameter("bookingCkout");
+        int billId = Integer.parseInt(request.getParameter("id"));
+        double billPrePrice = Double.parseDouble(request.getParameter("billPrePrice"));
+        String checkout = request.getParameter("checkout");
         Bill bill = Bill.builder()
-                .user(User.builder().userId(name).build())
-                .room(Room.builder().roomId(room).build())
-                .checkInDate(cki)
-                .checkOutDate(cko)
+                .checkOutDate(checkout)
+                .billId(billId)
+                .billPrePrice(billPrePrice)
                 .build();
+        System.out.println(bill);
         dao.updateBill(bill);
         response.sendRedirect("list-booking");
     }

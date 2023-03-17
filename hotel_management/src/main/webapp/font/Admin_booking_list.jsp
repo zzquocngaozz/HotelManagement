@@ -35,8 +35,10 @@
                                         <th style="text-align: center">ID</th>
                                         <th style="text-align: center">Name</th>
                                         <th style="text-align: center">Phone</th>
+                                        <th style="text-align: center">Room Code</th>
                                         <th style="text-align: center">Check in Date</th>
                                         <th style="text-align: center">Check out Date</th>
+                                        <th style="text-align: center">Pre Price</th>
                                         <th style="text-align: center">Setting</th>
                                     </tr>
                                     </thead>
@@ -46,8 +48,10 @@
                                             <td style="text-align: center">${s.billId}</td>
                                             <td style="text-align: center">${s.user.userName}</td>
                                             <td style="text-align: center">${s.user.userPhone}</td>
+                                            <td style="text-align: center">${s.room.roomCode}</td>
                                             <td style="text-align: center">${s.checkInDate}</td>
                                             <td style="text-align: center">${s.checkOutDate}</td>
+                                            <td style="text-align: center">${s.billPrePrice}</td>
                                             </td>
 
                                             <td>

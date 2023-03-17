@@ -16,6 +16,7 @@ public class BookingListController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         BillDAO billDAO = new BillDAOImpl();
         List<Bill> billList = billDAO.getAllBill();
+        System.out.println(billList);
         request.setAttribute("list", billList);
         request.getRequestDispatcher("./font/Admin_booking_list.jsp").forward(request, response);
     }
